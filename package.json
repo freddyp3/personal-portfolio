@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev -H 0.0.0.0 --turbo",
-    "build": "next build && npm run extract && npm run push",
+    "build": "next build && npm run extract",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
