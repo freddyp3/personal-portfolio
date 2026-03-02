@@ -1,17 +1,30 @@
 {
   "projects": [
     {
-      "name": "YouTube Shorts AI Optimizer",
-      "description": "End-to-end video optimization pipeline automating thumbnail selection, title, and description generation for YouTube Shorts, growing a personal channel to 38,000+ subscribers, 45,000,000+ views, and 1,800,000+ likes",
-      "image": "",
-      "tags": ["Python", "FastAPI", "AWS", "OpenCV", "XGBoost"],
-      "links": []
+      "name": "Java OOP Quiz Application",
+      "description": "Java study tool for CPSC 210 students utilized by 5+ peers, implementing layered architecture with interface-based abstraction, polymorphic JSON serialization, and 100% JUnit test coverage",
+      "image": "/img/quiz.png",
+      "tags": ["Java", "Swing", "JUnit", "JSON"],
+      "links": [
+        {
+          "name": "Source",
+          "href": "https://github.com/freddyp3/JavaChamp-Challenge",
+          "icon": "github"
+        }
+      ]
     },
     {
       "name": "Inventory & Cashflow Manager",
       "description": "Multi-currency management system for a personal retail business tracking 50+ transactions and 40+ global shipments, processing $6K+ in cumulative cashflow with real-time currency conversion via the Frankfurter REST API",
       "image": "/img/cashflow.png",
-      "tags": ["Java", "Spring Boot", "React", "PostgreSQL", "Docker", "Gradle"],
+      "tags": [
+        "Java",
+        "Spring Boot",
+        "React",
+        "PostgreSQL",
+        "Docker",
+        "Gradle"
+      ],
       "links": []
     },
     {
@@ -28,26 +41,6 @@
       ]
     },
     {
-      "name": "Chelsea FC Play Predictor",
-      "description": "Pipeline ingesting Chelsea match data from FBref and Understat into PostgreSQL with automated feature computation, feeding 7 statistical and ML models with an EV optimizer and Streamlit dashboard",
-      "image": "",
-      "tags": ["Python", "pandas", "scipy", "PostgreSQL", "Streamlit", "scikit-learn"],
-      "links": []
-    },
-    {
-      "name": "Java OOP Quiz Application",
-      "description": "Java study tool for CPSC 210 students utilized by 5+ peers, implementing layered architecture with interface-based abstraction, polymorphic JSON serialization, and 100% JUnit test coverage",
-      "image": "/img/quiz.png",
-      "tags": ["Java", "Swing", "JUnit", "JSON"],
-      "links": [
-        {
-          "name": "Source",
-          "href": "https://github.com/freddyp3/JavaChamp-Challenge",
-          "icon": "github"
-        }
-      ]
-    },
-    {
       "name": "Vital-Sense Radar",
       "description": "Non-contact respiratory and heart rate monitor using Wi-Fi Channel State Information (CSI) with dual ESP32-S3 boards",
       "image": "",
@@ -59,6 +52,27 @@
           "icon": "github"
         }
       ]
+    },
+    {
+      "name": "Chelsea FC Play Predictor",
+      "description": "Pipeline ingesting Chelsea match data from FBref and Understat into PostgreSQL with automated feature computation, feeding 7 statistical and ML models with an EV optimizer and Streamlit dashboard",
+      "image": "",
+      "tags": [
+        "Python",
+        "pandas",
+        "scipy",
+        "PostgreSQL",
+        "Streamlit",
+        "scikit-learn"
+      ],
+      "links": []
+    },
+    {
+      "name": "YouTube Shorts AI Optimizer",
+      "description": "End-to-end video optimization pipeline automating thumbnail selection, title, and description generation for YouTube Shorts, growing a personal channel to 38,000+ subscribers, 45,000,000+ views, and 1,800,000+ likes",
+      "image": "",
+      "tags": ["Python", "FastAPI", "AWS", "OpenCV", "XGBoost"],
+      "links": []
     },
     {
       "name": "Photo Time Capsule",
