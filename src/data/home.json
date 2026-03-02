@@ -1,16 +1,6 @@
 {
   "introduction": {
-    "greeting": "hi ted here. 👋",
-    "description": "Backend by profession, full-stack by passion. I build and self-host the lot.",
-    "chatPrompt": "For Q&A, start a chat with Ted Support",
-    "escalation": {
-      "text": "For any escalations, please find my",
-      "linkText": "Ted Lead",
-      "suffix": "instead."
-    }
-  },
-  "escalationLink": {
-    "href": "https://www.instagram.com/gomugomu.cat",
-    "title": "meow"
+    "greeting": "hi, Fredrik here 👋",
+    "description": "I'm a computer science student at The\u00A0University\u00A0of\u00A0British\u00A0Columbia, with interest in software engineering and machine learning"
   }
 }

@@ -1,128 +1,88 @@
 {
   "projects": [
     {
-      "name": "TT4D",
-      "description": "Generate winning combinations, view past results, and analyze lottery trends all in one place",
-      "image": "/img/tt4d.png",
-      "tags": [
-        "Python",
-        "FastAPI",
-        "Docker",
-        "Fly.io",
-        "NextJS",
-        "PostgreSQL",
-        "TailwindCSS",
-        "BS4"
-      ],
-      "links": [
-        {
-          "name": "Website",
-          "href": "https://huatnumbers.com",
-          "icon": "globe"
-        },
-        {
-          "name": "Source",
-          "href": "https://github.com/tedawf/tt4d",
-          "icon": "github"
-        },
-        {
-          "name": "Source (UI)",
-          "href": "https://github.com/tedawf/tt4d-web",
-          "icon": "github"
-        }
-      ]
+      "name": "YouTube Shorts AI Optimizer",
+      "description": "End-to-end video optimization pipeline automating thumbnail selection, title, and description generation for YouTube Shorts, growing a personal channel to 38,000+ subscribers, 45,000,000+ views, and 1,800,000+ likes",
+      "image": "",
+      "tags": ["Python", "FastAPI", "AWS", "OpenCV", "XGBoost"],
+      "links": []
     },
     {
-      "name": "Tradingview Telegram Alerts",
-      "description": "Real-time trading alerts with chart snapshots sent to Telegram, designed to keep traders informed and responsive to market changes",
-      "image": "/img/tv-tele-alerts.png",
-      "tags": [
-        "Python",
-        "FastAPI",
-        "Docker",
-        "Fly.io",
-        "Selenium",
-        "Telegram Bot API"
-      ],
+      "name": "Inventory & Cashflow Manager",
+      "description": "Multi-currency management system for a personal retail business tracking 50+ transactions and 40+ global shipments, processing $6K+ in cumulative cashflow with real-time currency conversion via the Frankfurter REST API",
+      "image": "/img/cashflow.png",
+      "tags": ["Java", "Spring Boot", "React", "PostgreSQL", "Docker", "Gradle"],
+      "links": []
+    },
+    {
+      "name": "Premier Predictor",
+      "description": "Scraped and processed English Premier League match data using Random Forest classifier to predict outcomes",
+      "image": "/img/predictor.png",
+      "tags": ["Python", "pandas", "scikit-learn", "BeautifulSoup", "Jupyter"],
       "links": [
         {
           "name": "Source",
-          "href": "https://github.com/tedawf/tradingview-telegram-alerts",
+          "href": "https://github.com/freddyp3/PremierPredictor",
           "icon": "github"
         }
       ]
     },
     {
-      "name": "NFTVue",
-      "description": "Non-Fungible Tokens (NFTs) Gallery Viewer website that allows users to connect their crypto wallets to view and verify their tokens",
-      "href": "https://nftvue.vercel.app",
-      "image": "/img/nftvue.png",
-      "tags": [
-        "NextJS",
-        "TailwindCSS",
-        "MetaMask",
-        "WalletConnect",
-        "Web3",
-        "NFTScan",
-        "HashKey DID"
-      ],
-      "links": [
-        {
-          "name": "Website",
-          "href": "https://nftvue.vercel.app",
-          "icon": "globe"
-        }
-      ]
+      "name": "Chelsea FC Play Predictor",
+      "description": "Pipeline ingesting Chelsea match data from FBref and Understat into PostgreSQL with automated feature computation, feeding 7 statistical and ML models with an EV optimizer and Streamlit dashboard",
+      "image": "",
+      "tags": ["Python", "pandas", "scipy", "PostgreSQL", "Streamlit", "scikit-learn"],
+      "links": []
     },
     {
-      "name": "Portfolio 2023 (Outdated)",
-      "description": "Simple markdown portfolio made with Astro 🚀",
-      "href": "https://tedawf-dot-com.netlify.app",
-      "image": "/img/old-portfolio.png",
-      "tags": ["Astro", "TailwindCSS", "Netlify", "SEO"],
+      "name": "Java OOP Quiz Application",
+      "description": "Java study tool for CPSC 210 students utilized by 5+ peers, implementing layered architecture with interface-based abstraction, polymorphic JSON serialization, and 100% JUnit test coverage",
+      "image": "/img/quiz.png",
+      "tags": ["Java", "Swing", "JUnit", "JSON"],
       "links": [
-        {
-          "name": "Website",
-          "href": "https://tedawf-dot-com.netlify.app",
-          "icon": "globe"
-        },
         {
           "name": "Source",
-          "href": "https://github.com/tedawf/portfolio-2023",
+          "href": "https://github.com/freddyp3/JavaChamp-Challenge",
           "icon": "github"
         }
       ]
     },
     {
-      "name": "Rapid Ride Fight (Final Year)",
-      "description": "3D capture-the-flag, multiplayer boat fighting, with smart AI and water graphics",
-      "href": "https://games.digipen.edu/games/rapid-ride-fight",
-      "image": "/img/rrf.png",
-      "tags": ["C/C++", "OpenGL", "Custom Game Engine", "3D"],
+      "name": "Vital-Sense Radar",
+      "description": "Non-contact respiratory and heart rate monitor using Wi-Fi Channel State Information (CSI) with dual ESP32-S3 boards",
+      "image": "",
+      "tags": ["ESP32-S3", "ESP-IDF", "Wi-Fi CSI", "Python", "NumPy", "SciPy"],
       "links": [
         {
-          "name": "Gameplay",
-          "href": "https://www.youtube.com/watch?v=bge3fiypg5U",
-          "icon": "youtube"
-        },
-        {
-          "name": "Trailer",
-          "href": "https://www.youtube.com/watch?v=PNAO-aI1Daw",
-          "icon": "youtube"
+          "name": "Source",
+          "href": "https://github.com/freddyp3/vital-sense",
+          "icon": "github"
         }
       ]
     },
     {
-      "name": "Glowing Under (2nd Year)",
-      "description": "2D platformer with a focus on puzzle-solving, no-death exploration and storytelling",
-      "href": "https://games.digipen.edu/games/glowing-under",
-      "image": "/img/gu.png",
-      "tags": ["C/C++", "OpenGL", "Custom Game Engine", "2D"],
+      "name": "Photo Time Capsule",
+      "description": "Hackathon mobile app for creating time capsule photo albums with camera capture and comment threads",
+      "image": "/img/momento.png",
+      "tags": ["React Native", "Firebase", "Expo Go"],
       "links": [
         {
-          "name": "Trailer",
-          "href": "https://www.youtube.com/watch?v=u6RYwBZlSfg",
-          "icon": "youtube"
+          "name": "Source",
+          "href": "https://github.com/freddyp3/ProductX",
+          "icon": "github"
+        }
+      ]
+    },
+    {
+      "name": "Minecraft Data Science Project",
+      "description": "Analyzed player engagement and subscription behavior from a Minecraft research server using KNN classification and cross-validation",
+      "image": "/img/minecraft.png",
+      "tags": ["R", "tidyverse", "tidymodels", "ggplot2", "Jupyter"],
+      "links": [
+        {
+          "name": "Source",
+          "href": "https://github.com/freddyp3/Minecraft-Playtime-Predictions",
+          "icon": "github"
         }
       ]
     }

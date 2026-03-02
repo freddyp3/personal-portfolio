@@ -1,41 +1,26 @@
-_Last Updated: Dec 2025_
+_Last Updated: March 2026_
 
-## TL;DR
+## Overview
 
-This site doesn’t track you. If you use the chatbot, messages are stored in my database so I can see what people are asking and improve the site.
+This site doesn't track you. No accounts, no ads, no tracking cookies.
 
-## Hey 👋
+## What I collect
 
-Thanks for stopping by. This is my personal portfolio and blog where I share my work, projects, and thoughts. I care about privacy, so here’s a simple, no-nonsense explanation of how things work.
+This is a personal portfolio site and it's mostly static. The only information I receive is what you choose to share through the contact form — your name, email, and message.
 
-## What I collect (and why)
+### Contact form
 
-This site is mostly static. There are no accounts, no ads, and no tracking cookies watching what you do.
-
-There are only a couple of cases where information might be stored:
-
-### Chatbot messages
-
-If you use the chatbot, the messages are stored in my own database. I use them purely to understand what people are asking about, spot gaps in the site, and improve the chatbot and content over time.
-
-I’m the only one looking at this data. It’s not shared or sold. Please don’t put anything sensitive or offensive into the chat.
-
-### Contacting me
-
-If you email me or use the contact form, I’ll only use your email to reply and continue the conversation.
+If you reach out via the contact form, I'll only use your email to respond. Your information won't be shared with anyone.
 
 ## How I use the info
 
-Any information that’s collected is used to:
+Any information collected is used to:
 
 - Keep the site running properly
-- Improve the site and content
-- Respond to messages and feedback
+- Respond to messages
 
-That’s it.
-
-I don’t sell, trade, or rent personal data. If you accidentally share something you’d rather not have stored, just let me know and I’ll remove it.
+I don't sell, trade, or rent personal data.
 
 ## Questions?
 
-If you have questions, concerns, or just want to say hi, email me at [hello@tedawf.com](mailto:hello@tedawf.com) or use the [contact form](/contact). Happy to chat.
+If you have any questions or concerns, feel free to reach out at [fredrikpettit@gmail.com](mailto:fredrikpettit@gmail.com) or through the [contact form](/contact).

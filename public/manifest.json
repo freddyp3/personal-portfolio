@@ -1,27 +1,16 @@
 {
-  "name": "Ted Thoughts.",
-  "short_name": "tedawf.com",
+  "name": "fpettit-portfolio",
+  "short_name": "fpettit",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
-  "description": "My personal site to showcase my developer work and opinions.",
+  "description": "Fredrik Pettit's personal portfolio.",
   "icons": [
     {
-      "src": "/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    },
-    {
-      "src": "/apple-touch-icon.png",
-      "sizes": "180x180",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
     }
   ]
 }

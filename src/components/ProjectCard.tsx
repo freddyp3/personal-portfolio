@@ -8,7 +8,6 @@ import {
 } from "@/components/ui/Card";
 import { Project } from "@/lib/schemas";
 import Link from "next/link";
-import Markdown from "react-markdown";
 import Icon from "./Icon";
 import ImageWithSkeleton from "./ImageWithSkeleton";
 
@@ -22,8 +21,8 @@ export function ProjectCard({ project }: Props) {
   return (
     <Card className="flex flex-col">
       <CardHeader>
-        {image && (
-          <Link href={href || image}>
+        {image && href ? (
+          <Link href={href}>
             <ImageWithSkeleton
               src={image}
               alt={name}
@@ -35,13 +34,24 @@ export function ProjectCard({ project }: Props) {
               className="h-40 w-full object-cover object-top"
             />
           </Link>
-        )}
+        ) : image ? (
+          <ImageWithSkeleton
+            src={image}
+            alt={name}
+            width={500}
+            height={300}
+            sizes="(max-width: 640px) calc(100vw - 4rem), 344px"
+            quality={75}
+            containerClassName="h-40 w-full"
+            className="h-40 w-full object-cover object-top"
+          />
+        ) : null}
       </CardHeader>
       <CardContent className="flex flex-col gap-2">
         <CardTitle>{name}</CardTitle>
-        <Markdown className="prose max-w-full text-pretty font-sans text-xs text-muted-foreground dark:prose-invert">
+        <p className="max-w-full text-pretty font-sans text-xs text-muted-foreground">
           {description}
-        </Markdown>
+        </p>
       </CardContent>
       <CardFooter className="flex h-full flex-col items-start justify-between gap-4">
         {tags && tags.length > 0 && (

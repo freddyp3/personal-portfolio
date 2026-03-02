@@ -1,49 +1,17 @@
 {
   "education": [
     {
-      "name": "Digipen Institute of Technology Singapore",
-      "href": "https://www.digipen.edu.sg",
-      "logo": "/img/digipen.png",
+      "name": "University of British Columbia",
+      "href": "https://www.ubc.ca",
+      "logo": "/img/ubc.png",
       "positions": [
         {
-          "title": "BS in Computer Science in Real-Time Interactive Simulation",
-          "start": "Sep 2019",
-          "end": "Apr 2023",
+          "title": "Bachelor of Science in Computer Science",
+          "start": "Sep 2024",
+          "end": "Expected May 2028",
           "description": [
-            "Graduated with a Minor in Mathematics",
-            "President of Digipen Student Management Committee for freshman year",
-            "3-time recipient of the Dean's Honor List"
-          ],
-          "links": [
-            {
-              "name": "Final Year Project",
-              "href": "https://games.digipen.edu/games/rapid-ride-fight",
-              "icon": "globe"
-            },
-            {
-              "name": "2nd Year Project",
-              "href": "https://games.digipen.edu/games/glowing-under",
-              "icon": "globe"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Singapore Polytechnic",
-      "href": "https://www.sp.edu.sg",
-      "logo": "/img/sp.png",
-      "positions": [
-        {
-          "title": "Diploma in Games Design and Development",
-          "start": "Apr 2014",
-          "end": "May 2017",
-          "links": [
-            {
-              "name": "Final Year Project",
-              "href": "https://tedawf.github.io/portfolio-2019/phase.html",
-              "icon": "globe"
-            }
+            "GPA: 3.8",
+            "Relevant Coursework: ML and Data Mining (CPSC 340), DSA (CPSC 320), Software Engineering (CPSC 310), Computer Systems (CPSC 213)"
           ]
         }
       ]

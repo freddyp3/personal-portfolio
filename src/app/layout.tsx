@@ -3,7 +3,8 @@ import Header from "@/components/Header";
 import Providers from "@/components/Providers";
 import { cn } from "@/lib/utils";
 import type { Metadata, Viewport } from "next";
-import { Calistoga, Inter } from "next/font/google";
+import { Inter } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 
 const inter = Inter({
@@ -11,21 +12,13 @@ const inter = Inter({
   variable: "--font-sans",
   weight: ["400", "500", "600", "700"],
 });
-const calistoga = Calistoga({
-  subsets: ["latin"],
-  variable: "--font-serif",
-  weight: ["400"],
-});
+const geist = GeistSans;
 
 export const metadata: Metadata = {
-  title: "Ted Thoughts.",
-  description: "My personal site to showcase my developer work and opinions.",
+  title: "fpettit-portfolio",
+  description: "Fredrik Pettit's personal portfolio.",
   icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/icon.svg", type: "image/svg+xml" },
-    ],
-    apple: "/apple-touch-icon.png",
+    icon: { url: "/icon.svg", type: "image/svg+xml" },
   },
   manifest: "/manifest.json",
 };
@@ -46,7 +39,7 @@ export default function RootLayout({
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
           inter.variable,
-          calistoga.variable,
+          geist.variable,
         )}
       >
         <Providers>

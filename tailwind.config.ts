@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: "selector",
+  darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -59,6 +59,7 @@ const config: Config = {
       fontFamily: {
         sans: "var(--font-sans)",
         serif: "var(--font-serif)",
+        geist: "var(--font-geist-sans)",
       },
       keyframes: {
         "accordion-down": {
