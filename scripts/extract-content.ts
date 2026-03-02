@@ -23,7 +23,7 @@ function extractHomepageContent(): ContentChunk[] {
   const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
 
   // Group all homepage content into a single coherent chunk
-  const homepageContent = `${data.introduction.greeting} ${data.introduction.description}. ${data.introduction.chatPrompt}. ${data.introduction.escalation.text} ${data.introduction.escalation.linkText} (${data.escalationLink.href}) ${data.introduction.escalation.suffix}`;
+  const homepageContent = `${data.introduction.greeting} ${data.introduction.description}`;
 
   return [
     {
