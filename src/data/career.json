@@ -8,8 +8,9 @@
         {
           "title": "Software Engineering Intern",
           "start": "Jan 2026",
+          "end": "April 2026",
           "description": [
-            "Architected a layered recommendation system separating frontend UI components from a Python service-layer engine, evaluating 15 ergonomic attributes across 100+ chairs through structured seat-range and user preference models.",
+            "Architected as layered recommendation system separating frontend UI components from a Python service-layer engine, evaluating 15 ergonomic attributes across 100+ chairs through structured seat-range and user preference models.",
             "Designed a three-phase pipeline consisting of hard constraint filtering, weighted scoring, and ranked classification with explanation generation, incorporating deterministic tie-breaking, confidence scores, and structured missing-data handling.",
             "Working within an Agile team, reduced recurring validation defects by 30% across a multi-module B4A/B4X application by implementing 40+ targeted unit and regression tests covering boundary conditions and invalid inputs."
           ]
