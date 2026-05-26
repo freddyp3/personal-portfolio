@@ -9,7 +9,7 @@ interface Props {
 }
 
 export default function TimelineItem({ experience }: Props) {
-  const { name, href, logo, positions } = experience;
+  const { name, href, logo, logoClassName, positions } = experience;
 
   return (
     <li className="relative ml-10 py-4">
@@ -25,7 +25,7 @@ export default function TimelineItem({ experience }: Props) {
             alt={name}
             loading="lazy"
             decoding="async"
-            className="bg-background object-contain"
+            className={`bg-background object-contain ${logoClassName ?? ""}`}
           />
           <AvatarFallback>{name[0]}</AvatarFallback>
         </Avatar>

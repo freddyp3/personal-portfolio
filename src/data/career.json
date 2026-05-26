@@ -4,6 +4,7 @@
       "name": "AEM",
       "href": "",
       "logo": "/img/aem.png",
+      "logoClassName": "scale-[1.6] !bg-white",
       "positions": [
         {
           "title": "AI Engineer Intern",

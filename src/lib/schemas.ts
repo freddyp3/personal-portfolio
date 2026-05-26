@@ -44,6 +44,7 @@ const experience = z.object({
   name: z.string(),
   href: z.string(),
   logo: z.string(),
+  logoClassName: z.string().optional(),
   positions: z.array(experiencePosition).min(1),
 });
 export type Experience = z.infer<typeof experience>;
