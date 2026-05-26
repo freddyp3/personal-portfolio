@@ -1,6 +1,22 @@
 {
   "career": [
     {
+      "name": "AEM",
+      "href": "",
+      "logo": "/img/aem.png",
+      "positions": [
+        {
+          "title": "AI Engineer Intern",
+          "start": "Apr 2026",
+          "description": [
+            "Built a Prefect-scheduled monthly budget classification agent on LangGraph, canonicalizing vendor names and correcting GL codes across 1000+ transactions through rule matching and Claude API reasoning, cutting 6+ hours of labor to 5 minutes.",
+            "Designed a self-improving categorization system that validates Claude outputs with Pydantic and tracks confidence over time in LangSmith, caching high confidence results as reusable rules and flagging low confidence rows for finance review.",
+            "Shipped an evaluation harness that checks each run's categorizations against prior budget-vs-actuals records completed by hand by the finance team, reporting per-vendor accuracy in LangSmith to catch mistakes before the monthly results go out."
+          ]
+        }
+      ]
+    },
+    {
       "name": "ELLUSTROS",
       "href": "",
       "logo": "/img/ellustros.png",
@@ -8,26 +24,25 @@
         {
           "title": "Software Engineering Intern",
           "start": "Jan 2026",
-          "end": "April 2026",
+          "end": "Apr 2026",
           "description": [
-            "Architected as layered recommendation system separating frontend UI components from a Python service-layer engine, evaluating 15 ergonomic attributes across 100+ chairs through structured seat-range and user preference models.",
-            "Designed a three-phase pipeline consisting of hard constraint filtering, weighted scoring, and ranked classification with explanation generation, incorporating deterministic tie-breaking, confidence scores, and structured missing-data handling.",
-            "Working within an Agile team, reduced recurring validation defects by 30% across a multi-module B4A/B4X application by implementing 40+ targeted unit and regression tests covering boundary conditions and invalid inputs."
+            "Developed and deployed a FastAPI REST service exposing endpoints for a recommendation engine consumed by a React Native frontend, applying layered filtering and weighted scoring across 15 ergonomic attributes to rank 100+ office chairs.",
+            "Cut recurring validation defects by 30% across the TROS Bespoke app by implementing 40+ unit and regression tests in Jest and React Testing Library covering user sign-in flows and AI measurement capture while working in an Agile team."
           ]
         }
       ]
     },
     {
-      "name": "University of British Columbia",
+      "name": "UBC Department of Computer Science",
       "href": "https://www.ubc.ca",
       "logo": "/img/ubc.png",
       "positions": [
         {
-          "title": "Teaching Assistant",
+          "title": "Teaching Assistant | CPSC 310, CPSC 110",
           "start": "Aug 2025",
           "description": [
-            "Collaborated with a team of 50+ TAs to support 900+ students in Computation, Programs, and Programming covering concepts in abstraction, data representation, and program design.",
-            "Led lab sessions for 30 students in a team of 3, guiding systematic problem solving and program design while code reviewing for readability, decomposition, and abstraction."
+            "Supported 900+ students in UBC's largest computer science course, achieving a 4.9/5 average student evaluation score.",
+            "Built 250+ randomized HTML/JavaScript questions and Python autograders for CPSC 310 - Intro to Software Engineering."
           ]
         }
       ]
