@@ -10,9 +10,10 @@
           "title": "AI Engineer Intern",
           "start": "Apr 2026",
           "description": [
-            "Built a Prefect-scheduled monthly budget classification agent on LangGraph, canonicalizing vendor names and correcting GL codes across 1000+ transactions through rule matching and Claude API reasoning, cutting 6+ hours of labor to 5 minutes.",
-            "Designed a self-improving categorization system that validates Claude outputs with Pydantic and tracks confidence over time in LangSmith, caching high confidence results as reusable rules and flagging low confidence rows for finance review.",
-            "Shipped an evaluation harness that checks each run's categorizations against prior budget-vs-actuals records completed by hand by the finance team, reporting per-vendor accuracy in LangSmith to catch mistakes before the monthly results go out."
+            "Shipped an AI support agent that resolves 42% of staff and customer IT tickets, launched against an 800+ ticket backlog.",
+            "Engineered a RAG pipeline across bilingual docs that rewrites each query with an LLM before hybrid vector and keyword search on Azure AI Search over OpenAI embeddings, returning grounded answers with citations and a ~2s first token.",
+            "Fine-tuned a cross-encoder reranker in PyTorch on 1,400 resolved tickets, lifting retrieval recall@5 from 74% to 88%.",
+            "Cut monthly budget categorization from 6+ hours to 5 minutes with a LangGraph agent that fixes vendors and GL codes across 1000+ transactions via Claude API, validated by an evaluation harness against finance's hand-done records."
           ]
         }
       ]
@@ -27,8 +28,8 @@
           "start": "Jan 2026",
           "end": "Apr 2026",
           "description": [
-            "Developed and deployed a FastAPI REST service exposing endpoints for a recommendation engine consumed by a React Native frontend, applying layered filtering and weighted scoring across 15 ergonomic attributes to rank 100+ office chairs.",
-            "Cut recurring validation defects by 30% across the TROS Bespoke app by implementing 40+ unit and regression tests in Jest and React Testing Library covering user sign-in flows and AI measurement capture while working in an Agile team."
+            "Developed a recommendation engine that ranks 100+ office chairs against each user's measurements through layered filtering and weighted scoring across 15 ergonomic attributes, deployed as a FastAPI service powering a React Native app.",
+            "Cut validation defects per sprint by 32% across the flagship mobile app by writing 40+ Jest and React Testing Library regression tests covering user sign-in flows and AI-driven measurement capture, run in a CI/CD pipeline on each merge."
           ]
         }
       ]
@@ -58,7 +59,7 @@
           "start": "Aug 2023",
           "end": "December 2025",
           "description": [
-            "Taught 30+ students how to buil  2D & 3D games with Unity and PixelPad, adapting lessons to different skill levels to strengthen computational thinking and core programming skills.",
+            "Taught 30+ students how to build 2D & 3D games with Unity and PixelPad, adapting lessons to different skill levels to strengthen computational thinking and core programming skills.",
             "Led teams of 4 to SFU Canadian Coding League Regionals"
           ]
         }

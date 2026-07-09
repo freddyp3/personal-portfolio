@@ -1,7 +1,8 @@
-import { Github, Linkedin, Mail, type LucideProps } from "lucide-react";
+import { Github, Globe, Linkedin, Mail, type LucideProps } from "lucide-react";
 
 const iconMap = {
   github: Github,
+  globe: Globe,
   linkedin: Linkedin,
   mail: Mail,
 } as const;

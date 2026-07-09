@@ -1,6 +1,19 @@
 {
   "projects": [
     {
+      "name": "GitIntent",
+      "description": "UC Berkeley AI LLM Hackathon project that lets AI coding agents learn from developers and fellow agents by recording every change with the prompt behind it, then recalling failed attempts before repeating them, lifting performance 8.3% across 36 DeepSWE runs",
+      "image": "",
+      "tags": ["Python", "TypeScript", "FastAPI", "Redis Stack", "voyage-code-3"],
+      "links": [
+        {
+          "name": "Devpost",
+          "href": "https://devpost.com/software/gitintent",
+          "icon": "globe"
+        }
+      ]
+    },
+    {
       "name": "Java OOP Quiz Application",
       "description": "Java study tool for CPSC 210 students utilized by 5+ peers, implementing layered architecture with interface-based abstraction, polymorphic JSON serialization, and 100% JUnit test coverage",
       "image": "/img/quiz.png",
@@ -14,16 +27,16 @@
       ]
     },
     {
-      "name": "Inventory & Cashflow Manager",
-      "description": "Multi-currency management system for a personal retail business tracking 50+ transactions and 40+ global shipments, processing $6K+ in cumulative cashflow with real-time currency conversion via the Frankfurter REST API",
+      "name": "Inventory & Sales Automation Platform",
+      "description": "Custom infrastructure for a personal cross-platform retail business on Grailed, Depop, and eBay, logging 60+ international orders and $6K+ in transactions, with automated Gmail order logging and a Playwright service that reposts listings weekly on a 30-day bump-then-reduce price cycle",
       "image": "/img/cashflow.png",
       "tags": [
-        "Java",
         "Spring Boot",
         "React",
+        "TypeScript",
         "PostgreSQL",
-        "Docker",
-        "Gradle"
+        "Python",
+        "FastAPI"
       ],
       "links": []
     },
