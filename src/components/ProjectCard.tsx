@@ -7,9 +7,11 @@ import {
   CardTitle,
 } from "@/components/ui/Card";
 import { Project } from "@/lib/schemas";
+import { ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
 import Icon from "./Icon";
 import ImageWithSkeleton from "./ImageWithSkeleton";
+import LinkWithIcon from "./LinkWithIcon";
 
 interface Props {
   project: Project;
@@ -67,16 +69,27 @@ export function ProjectCard({ project }: Props) {
             ))}
           </div>
         )}
-        {links && links.length > 0 && (
-          <div className="flex flex-row flex-wrap items-start gap-1">
-            {links.toSorted().map((link, idx) => (
-              <Link href={link?.href} key={idx} target="_blank">
-                <Badge key={idx} className="flex gap-2 px-2 py-1 text-[10px]">
-                  <Icon name={link.icon} className="size-3" />
-                  {link.name}
-                </Badge>
-              </Link>
-            ))}
+        {((links && links.length > 0) || href) && (
+          <div className="flex w-full flex-row flex-wrap items-center justify-between gap-2">
+            <div className="flex flex-row flex-wrap items-start gap-1">
+              {links?.toSorted().map((link, idx) => (
+                <Link href={link?.href} key={idx} target="_blank">
+                  <Badge key={idx} className="flex gap-2 px-2 py-1 text-[10px]">
+                    <Icon name={link.icon} className="size-3" />
+                    {link.name}
+                  </Badge>
+                </Link>
+              ))}
+            </div>
+            {href && (
+              <LinkWithIcon
+                href={href}
+                position="right"
+                icon={<ArrowRightIcon className="size-4" />}
+                text="see more"
+                className="ml-auto text-sm"
+              />
+            )}
           </div>
         )}
       </CardFooter>

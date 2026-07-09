@@ -1,15 +1,61 @@
 {
   "projects": [
     {
+      "name": "YouTube Shorts AI Optimizer",
+      "description": "End-to-end video optimization pipeline automating thumbnail selection, title, and description generation for YouTube Shorts, growing a personal channel to 38,000+ subscribers, 45,000,000+ views, and 1,800,000+ likes",
+      "image": "",
+      "tags": ["Python", "FastAPI", "AWS", "OpenCV", "XGBoost"],
+      "links": []
+    },
+    {
       "name": "GitIntent",
       "description": "UC Berkeley AI LLM Hackathon project that lets AI coding agents learn from developers and fellow agents by recording every change with the prompt behind it, then recalling failed attempts before repeating them, lifting performance 8.3% across 36 DeepSWE runs",
-      "image": "",
+      "image": "/img/gitintent.jpg",
       "tags": ["Python", "TypeScript", "FastAPI", "Redis Stack", "voyage-code-3"],
       "links": [
+        {
+          "name": "Source",
+          "href": "https://github.com/koichiio/gitintent-ai-hack",
+          "icon": "github"
+        },
         {
           "name": "Devpost",
           "href": "https://devpost.com/software/gitintent",
           "icon": "globe"
+        }
+      ]
+    },
+    {
+      "name": "Inventory & Sales Automation Platform",
+      "description": "Custom infrastructure for a personal cross-platform retail business on Grailed, Depop, and eBay, logging 60+ international orders and $6K+ in transactions, with automated Gmail order logging and a Playwright service that reposts listings weekly on a 30-day bump-then-reduce price cycle",
+      "href": "/projects/cashflow-tracker",
+      "image": "/img/cashflow.png",
+      "tags": [
+        "Spring Boot",
+        "React",
+        "TypeScript",
+        "PostgreSQL",
+        "Python",
+        "FastAPI"
+      ],
+      "links": [
+        {
+          "name": "Source",
+          "href": "https://github.com/freddyp3/cashflow-tracker",
+          "icon": "github"
+        }
+      ]
+    },
+    {
+      "name": "Premier Predictor",
+      "description": "Scraped and processed English Premier League match data using Random Forest classifier to predict outcomes",
+      "image": "/img/predictor.png",
+      "tags": ["Python", "pandas", "scikit-learn", "BeautifulSoup", "Jupyter"],
+      "links": [
+        {
+          "name": "Source",
+          "href": "https://github.com/freddyp3/PremierPredictor",
+          "icon": "github"
         }
       ]
     },
@@ -22,33 +68,6 @@
         {
           "name": "Source",
           "href": "https://github.com/freddyp3/JavaChamp-Challenge",
-          "icon": "github"
-        }
-      ]
-    },
-    {
-      "name": "Inventory & Sales Automation Platform",
-      "description": "Custom infrastructure for a personal cross-platform retail business on Grailed, Depop, and eBay, logging 60+ international orders and $6K+ in transactions, with automated Gmail order logging and a Playwright service that reposts listings weekly on a 30-day bump-then-reduce price cycle",
-      "image": "/img/cashflow.png",
-      "tags": [
-        "Spring Boot",
-        "React",
-        "TypeScript",
-        "PostgreSQL",
-        "Python",
-        "FastAPI"
-      ],
-      "links": []
-    },
-    {
-      "name": "Premier Predictor",
-      "description": "Scraped and processed English Premier League match data using Random Forest classifier to predict outcomes",
-      "image": "/img/predictor.png",
-      "tags": ["Python", "pandas", "scikit-learn", "BeautifulSoup", "Jupyter"],
-      "links": [
-        {
-          "name": "Source",
-          "href": "https://github.com/freddyp3/PremierPredictor",
           "icon": "github"
         }
       ]
@@ -78,13 +97,6 @@
         "Streamlit",
         "scikit-learn"
       ],
-      "links": []
-    },
-    {
-      "name": "YouTube Shorts AI Optimizer",
-      "description": "End-to-end video optimization pipeline automating thumbnail selection, title, and description generation for YouTube Shorts, growing a personal channel to 38,000+ subscribers, 45,000,000+ views, and 1,800,000+ likes",
-      "image": "",
-      "tags": ["Python", "FastAPI", "AWS", "OpenCV", "XGBoost"],
       "links": []
     },
     {
