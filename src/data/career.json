@@ -9,9 +9,10 @@
         {
           "title": "AI Engineer Intern",
           "start": "Apr 2026",
+          "end": "Aug 2026",
           "description": [
-            "Shipped an AI support agent that resolves 42% of staff and customer IT tickets, launched against an 800+ ticket backlog.",
-            "Engineered a RAG pipeline across bilingual docs that rewrites each query with an LLM before hybrid vector and keyword search on Azure AI Search over OpenAI embeddings, returning grounded answers with citations and a ~2s first token.",
+            "Shipped an AI IT support agent that automatically resolves 42% of tickets across 9 brands, cutting an 800+ ticket backlog.",
+            "Engineered the retrieval pipeline across bilingual docs, an LLM query-rewriting layer feeding hybrid vector and keyword search on Azure AI Search over OpenAI embeddings, returning grounded answers with citations and a ~2–3s first token.",
             "Fine-tuned a cross-encoder reranker in PyTorch on 1,400 resolved tickets, lifting retrieval recall@5 from 74% to 88%.",
             "Cut monthly budget categorization from 6+ hours to 5 minutes with a LangGraph agent that fixes vendors and GL codes across 1000+ transactions via Claude API, validated by an evaluation harness against finance's hand-done records."
           ]
