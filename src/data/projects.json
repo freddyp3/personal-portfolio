@@ -2,7 +2,7 @@
   "projects": [
     {
       "name": "Scheming - HackMIT 2026",
-      "description": "Built a lie detector for AI models that flags when a model's words contradict its own private reasoning, citing the exact line as evidence, and tested it on AI agents playing Werewolf, matching human judgment on 94% of 300 hand-labeled turns. Pointed the same judge at 1,500 real coding-agent sessions, flagging claims like \"all tests pass\" that the agent's own logs contradicted in 6% of runs at 92% precision, so teams can catch agents misreporting their work before merging.",
+      "description": "Built a lie detector for AI models that flags when a model's words contradict its own private reasoning, citing the exact line as evidence. Tested on AI agents playing Werewolf, it matched human judgment on 94% of 300 hand-labeled turns. Run on 1,500 real coding-agent sessions, it caught agents claiming things like \"all tests pass\" that their own logs contradicted, at 92% precision.",
       "image": "",
       "tags": ["Python", "Claude", "OpenAI", "Modal", "MongoDB"],
       "links": [
@@ -20,14 +20,14 @@
     },
     {
       "name": "YouTube Shorts AI Optimizer",
-      "description": "An AI copilot that critiques draft YouTube Shorts before they are published and flags where viewers will swipe away, growing a personal channel from 1.2K to 38K subscribers with 45M total views, then launched publicly to 100+ users. Includes a multimodal eval scoring Gemini's video and audio analysis against retention on 85 held-out Shorts, reaching 0.45 Spearman correlation versus 0.25 for a veteran creator and pinpointing drop-off within 1.5s on 65% of them. Also ships as a remote MCP server so creators can get a publish plan without leaving Claude, running a tool-calling agent on Cloud Run that cut p95 latency from 95s to 18s with parallel tool calls and blocked 98.5% of 200 prompt-injection attacks.",
+      "description": "An AI copilot that critiques draft YouTube Shorts before publishing and flags where viewers will swipe away. Built on my own channel, which grew from 1.2K to 38K subscribers and 45M views, then launched publicly to 100+ users. Its Gemini-based retention analysis pinpoints drop-off within 1.5s on 65% of held-out Shorts, and it also ships as a remote MCP server on Cloud Run.",
       "image": "",
       "tags": ["Python", "Claude API", "MCP", "Gemini", "Google Cloud Run"],
       "links": []
     },
     {
       "name": "GitIntent",
-      "description": "Built a shared memory layer for AI coding agents that records every change with its prompt, then recalls failed attempts before any agent repeats them, lifting performance 8.3% over the same agent without memory across 36 DeepSWE runs. Designed the hybrid retrieval engine on Redis Stack, fusing HNSW vector search over voyage-code-3 embeddings with BM25 keyword ranking through Reciprocal Rank Fusion and deduplicating matches by snapshot, reaching ~93% recall@5.",
+      "description": "A shared memory layer for AI coding agents that records every change with the prompt behind it. Agents recall failed attempts before repeating them, which lifted performance 8.3% over the same agent without memory across 36 DeepSWE runs. It runs on a hybrid vector and keyword retrieval engine on Redis Stack that reaches ~93% recall@5.",
       "image": "/img/gitintent.jpg",
       "tags": [
         "Python",
@@ -51,7 +51,7 @@
     },
     {
       "name": "Inventory & Sales Automation Platform",
-      "description": "Custom infrastructure for a personal cross-platform retail business on Grailed, Depop, and eBay, logging 60+ international orders and $6K+ in transactions, with automated Gmail order logging and a Playwright service that reposts listings weekly on a 30-day bump-then-reduce price cycle",
+      "description": "Custom infrastructure for my cross-platform resale business on Grailed, Depop, and eBay. It logs orders automatically from Gmail and uses a Playwright service to repost listings weekly on a 30-day bump-then-reduce price cycle. It has tracked 60+ international orders and $6K+ in transactions.",
       "href": "/projects/cashflow-tracker",
       "image": "/img/cashflow.png",
       "tags": [
@@ -72,7 +72,7 @@
     },
     {
       "name": "Premier Predictor",
-      "description": "Scraped and processed English Premier League match data using Random Forest classifier to predict outcomes",
+      "description": "Scraped and cleaned English Premier League match data to train a model that predicts match outcomes. It uses a Random Forest classifier built with pandas and scikit-learn.",
       "image": "/img/predictor.png",
       "tags": ["Python", "pandas", "scikit-learn", "BeautifulSoup", "Jupyter"],
       "links": [
@@ -85,7 +85,7 @@
     },
     {
       "name": "Java OOP Quiz Application",
-      "description": "Java study tool for CPSC 210 students utilized by 5+ peers, implementing layered architecture with interface-based abstraction, polymorphic JSON serialization, and 100% JUnit test coverage",
+      "description": "A Java study tool for CPSC 210 students, used by 5+ peers. It has a layered architecture with interface-based abstraction and JSON save/load. It has 100% JUnit test coverage.",
       "image": "/img/quiz.png",
       "tags": ["Java", "Swing", "JUnit", "JSON"],
       "links": [
@@ -98,7 +98,7 @@
     },
     {
       "name": "Vital-Sense Radar",
-      "description": "Non-contact respiratory and heart rate monitor using Wi-Fi Channel State Information (CSI) with dual ESP32-S3 boards",
+      "description": "A non-contact monitor that estimates breathing and heart rate from Wi-Fi Channel State Information. Two ESP32-S3 boards send and receive the signal, and Python (NumPy, SciPy) processes it into vitals. No camera or wearable is needed.",
       "image": "",
       "tags": ["ESP32-S3", "ESP-IDF", "Wi-Fi CSI", "Python", "NumPy", "SciPy"],
       "links": [
@@ -111,7 +111,7 @@
     },
     {
       "name": "Chelsea FC Play Predictor",
-      "description": "Pipeline ingesting Chelsea match data from FBref and Understat into PostgreSQL with automated feature computation, feeding 7 statistical and ML models with an EV optimizer and Streamlit dashboard",
+      "description": "A data pipeline that pulls Chelsea match data from FBref and Understat into PostgreSQL and computes features automatically. It feeds 7 statistical and ML models. An EV optimizer and a Streamlit dashboard sit on top.",
       "image": "",
       "tags": [
         "Python",
@@ -125,7 +125,7 @@
     },
     {
       "name": "Photo Time Capsule",
-      "description": "Hackathon mobile app for creating time capsule photo albums with camera capture and comment threads",
+      "description": "A hackathon mobile app for making time-capsule photo albums. Users capture photos with the camera and discuss them in comment threads. Built with React Native, Firebase, and Expo Go.",
       "image": "/img/momento.png",
       "tags": ["React Native", "Firebase", "Expo Go"],
       "links": [
@@ -138,7 +138,7 @@
     },
     {
       "name": "Minecraft Data Science Project",
-      "description": "Analyzed player engagement and subscription behavior from a Minecraft research server using KNN classification and cross-validation",
+      "description": "Analyzed player engagement and subscription behavior on a Minecraft research server. It uses KNN classification with cross-validation to predict which players subscribe. Built in R with tidymodels.",
       "image": "/img/minecraft.png",
       "tags": ["R", "tidyverse", "tidymodels", "ggplot2", "Jupyter"],
       "links": [
