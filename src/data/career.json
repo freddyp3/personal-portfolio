@@ -11,10 +11,10 @@
           "start": "Apr 2026",
           "end": "Aug 2026",
           "description": [
-            "Shipped an AI IT support agent that automatically resolves 42% of tickets across 9 brands, cutting an 800+ ticket backlog.",
-            "Engineered the retrieval pipeline across bilingual docs, an LLM query-rewriting layer feeding hybrid vector and keyword search on Azure AI Search over OpenAI embeddings, returning grounded answers with citations and a ~2–3s first token.",
-            "Fine-tuned a cross-encoder reranker in PyTorch on 1,400 resolved tickets, lifting retrieval recall@5 from 74% to 88%.",
-            "Cut monthly budget categorization from 6+ hours to 5 minutes with a LangGraph agent that fixes vendors and GL codes across 1000+ transactions via Claude API, validated by an evaluation harness against finance's hand-done records."
+            "Scoped and shipped an AI customer support agent that resolves 42% of tickets on its own for customers in 4 countries, at $0.03 per resolved ticket versus $8 of staff time, saving about $16K a year and clearing an 800+ ticket backlog",
+            "Traced most escalations to German and acronym queries, lifting auto-resolution 8 points once fixed, then built a 300-case regression eval from live conversations that caught a 6-point drop from an upstream model update within 4 hours",
+            "Engineered a RAG pipeline over 4,000 pages of bilingual docs, with query rewriting feeding hybrid vector-keyword search on Azure AI Search and a reranker fine-tuned in PyTorch on 2,000 resolved tickets that lifted recall@5 from 77% to 87%",
+            "Cut monthly budget categorization from 6+ hours to 5 minutes with a LangGraph agent that fixes vendor and accounting codes on 1,000 transactions, filtering most with rules and a cache before Claude, sending low-confidence fixes to a human"
           ]
         }
       ]
@@ -29,8 +29,8 @@
           "start": "Jan 2026",
           "end": "Apr 2026",
           "description": [
-            "Developed a recommendation engine that ranks 100+ office chairs against each user's measurements through layered filtering and weighted scoring across 15 ergonomic attributes, deployed as a FastAPI service powering a React Native app.",
-            "Cut validation defects per sprint by 32% across the flagship mobile app by writing 40+ Jest and React Testing Library regression tests covering user sign-in flows and AI-driven measurement capture, run in a CI/CD pipeline on each merge."
+            "Built the recommendation engine behind the company's chair-fitting app, matching each user's body measurements to the best of 100+ office chairs through layered filtering and weighted scoring across 15 ergonomic attributes, served via FastAPI",
+            "Cut validation defects per sprint by 32% in the company's chair-fitting mobile app by writing 40+ Jest and React Testing Library tests covering user sign-in flows and AI-driven measurement capture, run in a CI/CD pipeline on each merge"
           ]
         }
       ]
@@ -44,8 +44,8 @@
           "title": "Teaching Assistant | CPSC 310, CPSC 110",
           "start": "Aug 2025",
           "description": [
-            "Supported 900+ students in UBC's largest computer science course, achieving a 4.9/5 average student evaluation score.",
-            "Built 250+ randomized HTML/JavaScript questions and Python autograders for CPSC 310 - Intro to Software Engineering."
+            "Supported 900+ students in UBC's largest computer science course, achieving a 4.9/5 average student evaluation score",
+            "Wrote 250+ randomized JavaScript questions and Python autograders for CPSC 310 - Intro to Software Engineering"
           ]
         }
       ]

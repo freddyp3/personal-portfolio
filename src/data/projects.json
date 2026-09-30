@@ -1,17 +1,41 @@
 {
   "projects": [
     {
-      "name": "YouTube Shorts AI Optimizer",
-      "description": "End-to-end video optimization pipeline automating thumbnail selection, title, and description generation for YouTube Shorts, growing a personal channel to 38,000+ subscribers, 45,000,000+ views, and 1,800,000+ likes",
+      "name": "Scheming - HackMIT 2026",
+      "description": "Built a lie detector for AI models that flags when a model's words contradict its own private reasoning, citing the exact line as evidence, and tested it on AI agents playing Werewolf, matching human judgment on 94% of 300 hand-labeled turns. Pointed the same judge at 1,500 real coding-agent sessions, flagging claims like \"all tests pass\" that the agent's own logs contradicted in 6% of runs at 92% precision, so teams can catch agents misreporting their work before merging.",
       "image": "",
-      "tags": ["Python", "FastAPI", "AWS", "OpenCV", "XGBoost"],
+      "tags": ["Python", "Claude", "OpenAI", "Modal", "MongoDB"],
+      "links": [
+        {
+          "name": "Plume",
+          "href": "https://plume.hackmit.org/project/gvpil-xfkgu-pddet-mdffu",
+          "icon": "globe"
+        },
+        {
+          "name": "Live",
+          "href": "https://ui-plum-three.vercel.app",
+          "icon": "globe"
+        }
+      ]
+    },
+    {
+      "name": "YouTube Shorts AI Optimizer",
+      "description": "An AI copilot that critiques draft YouTube Shorts before they are published and flags where viewers will swipe away, growing a personal channel from 1.2K to 38K subscribers with 45M total views, then launched publicly to 100+ users. Includes a multimodal eval scoring Gemini's video and audio analysis against retention on 85 held-out Shorts, reaching 0.45 Spearman correlation versus 0.25 for a veteran creator and pinpointing drop-off within 1.5s on 65% of them. Also ships as a remote MCP server so creators can get a publish plan without leaving Claude, running a tool-calling agent on Cloud Run that cut p95 latency from 95s to 18s with parallel tool calls and blocked 98.5% of 200 prompt-injection attacks.",
+      "image": "",
+      "tags": ["Python", "Claude API", "MCP", "Gemini", "Google Cloud Run"],
       "links": []
     },
     {
       "name": "GitIntent",
-      "description": "UC Berkeley AI LLM Hackathon project that lets AI coding agents learn from developers and fellow agents by recording every change with the prompt behind it, then recalling failed attempts before repeating them, lifting performance 8.3% across 36 DeepSWE runs",
+      "description": "Built a shared memory layer for AI coding agents that records every change with its prompt, then recalls failed attempts before any agent repeats them, lifting performance 8.3% over the same agent without memory across 36 DeepSWE runs. Designed the hybrid retrieval engine on Redis Stack, fusing HNSW vector search over voyage-code-3 embeddings with BM25 keyword ranking through Reciprocal Rank Fusion and deduplicating matches by snapshot, reaching ~93% recall@5.",
       "image": "/img/gitintent.jpg",
-      "tags": ["Python", "TypeScript", "FastAPI", "Redis Stack", "voyage-code-3"],
+      "tags": [
+        "Python",
+        "TypeScript",
+        "FastAPI",
+        "Redis Stack",
+        "voyage-code-3"
+      ],
       "links": [
         {
           "name": "Source",
