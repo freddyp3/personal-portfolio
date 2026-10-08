@@ -21,9 +21,14 @@
     {
       "name": "Scheming - HackMIT 2026",
       "description": "Built a lie detector for AI models that flags when a model's words contradict its own private reasoning, citing the exact line as evidence. Tested on AI agents playing Werewolf, it matched human judgment on 94% of 300 hand-labeled turns. Run on 1,500 real coding-agent sessions, it caught agents claiming things like \"all tests pass\" that their own logs contradicted, at 92% precision.",
-      "image": "",
+      "image": "/img/scheming.jpg",
       "tags": ["Python", "Claude", "OpenAI", "Modal", "MongoDB"],
       "links": [
+        {
+          "name": "Source",
+          "href": "https://github.com/vaibhavhariram/scheming",
+          "icon": "github"
+        },
         {
           "name": "Plume",
           "href": "https://plume.hackmit.org/project/gvpil-xfkgu-pddet-mdffu",
