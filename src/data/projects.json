@@ -1,6 +1,24 @@
 {
   "projects": [
     {
+      "name": "Apex FSD - StormHacks 2026 (Winner)",
+      "description": "Won Best Python Hack at StormHacks with a self-driving AI that plays Forza Horizon by physically turning a real steering wheel, and hands control back the instant a human grabs it. A PilotNet-style PyTorch CNN steers from screen pixels plus live telemetry, trained with DAgger so every manual correction becomes new training data. Saliency maps caught it fixating on roadside signs, so we cut the crash footage that taught it.",
+      "image": "/img/apex-fsd.jpg",
+      "tags": ["Python", "PyTorch", "OpenCV", "SDL2"],
+      "links": [
+        {
+          "name": "Source",
+          "href": "https://github.com/iancdev/stormhacks",
+          "icon": "github"
+        },
+        {
+          "name": "Devpost",
+          "href": "https://devpost.com/software/apex-fsd",
+          "icon": "globe"
+        }
+      ]
+    },
+    {
       "name": "Scheming - HackMIT 2026",
       "description": "Built a lie detector for AI models that flags when a model's words contradict its own private reasoning, citing the exact line as evidence. Tested on AI agents playing Werewolf, it matched human judgment on 94% of 300 hand-labeled turns. Run on 1,500 real coding-agent sessions, it caught agents claiming things like \"all tests pass\" that their own logs contradicted, at 92% precision.",
       "image": "",
@@ -20,7 +38,7 @@
     },
     {
       "name": "YouTube Shorts AI Optimizer",
-      "description": "An AI copilot that critiques draft YouTube Shorts before publishing and flags where viewers will swipe away. Built on my own channel, which grew from 1.2K to 38K subscribers and 45M views, then launched publicly to 100+ users. Its Gemini-based retention analysis pinpoints drop-off within 1.5s on 65% of held-out Shorts, and it also ships as a remote MCP server on Cloud Run.",
+      "description": "An AI copilot that critiques draft YouTube Shorts before publishing and predicts where viewers will swipe away. Built on my own channel, which grew from 1.2K to 38K subscribers and 45M views, and now used by 100+ other creators. Its Gemini retention predictions hit 0.45 Spearman on 85 held-out Shorts, beating a veteran creator's 0.25, and it ships as a remote MCP server that returns a plan in 18s at p95.",
       "image": "",
       "tags": ["Python", "Claude API", "MCP", "Gemini", "Google Cloud Run"],
       "links": []

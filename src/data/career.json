@@ -11,10 +11,11 @@
           "start": "Apr 2026",
           "end": "Aug 2026",
           "description": [
-            "Scoped and shipped an AI customer support agent that resolves 42% of tickets on its own for customers in 4 countries, at $0.03 per resolved ticket versus $8 of staff time, saving about $16K a year and clearing an 800+ ticket backlog",
-            "Traced most escalations to German and acronym queries, lifting auto-resolution 8 points once fixed, then built a 300-case regression eval from live conversations that caught a 6-point drop from an upstream model update within 4 hours",
-            "Engineered a RAG pipeline over 4,000 pages of bilingual docs, with query rewriting feeding hybrid vector-keyword search on Azure AI Search and a reranker fine-tuned in PyTorch on 2,000 resolved tickets that lifted recall@5 from 77% to 87%",
-            "Cut monthly budget categorization from 6+ hours to 5 minutes with a LangGraph agent that fixes vendor and accounting codes on 1,000 transactions, filtering most with rules and a cache before Claude, sending low-confidence fixes to a human"
+            "Scoped and shipped an AI customer support agent for customers in 4 countries that answers product questions straight from company docs at $0.03 a ticket versus $8 of staff time to save about $16K a year while clearing an 800+ ticket backlog",
+            "Engineered a RAG pipeline with hybrid search on Azure AI Search over 4,000 pages of bilingual docs and lifted auto-resolution from 34% to 44% with query rewriting for the German and acronym-heavy queries behind most escalations",
+            "Fine-tuned a PyTorch reranker on 2,000 past support tickets that lifted retrieval recall@5 from 77% to 87%",
+            "Built a 300-case regression eval that caught a 6-point drop in a GPT-4o to GPT-4.1 upgrade before it reached customers",
+            "Cut monthly budget-vs-actuals reporting from 6+ hours to 5 minutes with a LangChain agent that corrects vendor names and accounting codes, turns its confident answers into reusable rules and flags unsure ones for finance review"
           ]
         }
       ]
@@ -29,8 +30,9 @@
           "start": "Jan 2026",
           "end": "Apr 2026",
           "description": [
-            "Built the recommendation engine behind the company's chair-fitting app, matching each user's body measurements to the best of 100+ office chairs through layered filtering and weighted scoring across 15 ergonomic attributes, served via FastAPI",
-            "Cut validation defects per sprint by 32% in the company's chair-fitting mobile app by writing 40+ Jest and React Testing Library tests covering user sign-in flows and AI-driven measurement capture, run in a CI/CD pipeline on each merge"
+            "Designed and deployed the FastAPI recommendation engine powering the company's React Native chair-fitting app, filtering out chairs that don't fit each user's body measurements and ranking the rest with weighted ergonomic scoring",
+            "Cut photo upload failures on slow mobile networks by 70% by sending images straight to S3 through presigned URLs",
+            "Wrote 40+ Jest tests for sign-in and chair recommendation flows that stopped bugs from reaching QA"
           ]
         }
       ]
@@ -45,7 +47,7 @@
           "start": "Aug 2025",
           "description": [
             "Supported 900+ students in UBC's largest computer science course, achieving a 4.9/5 average student evaluation score",
-            "Wrote 250+ randomized JavaScript questions and Python autograders for CPSC 310 - Intro to Software Engineering"
+            "Wrote randomized JavaScript quiz questions and Python autograders used across CPSC 310 - Intro to Software Engineering"
           ]
         }
       ]
