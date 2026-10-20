@@ -1,3 +1,4 @@
+import DemoVideo from "@/components/DemoVideo";
 import Icon from "@/components/Icon";
 import ImageWithSkeleton from "@/components/ImageWithSkeleton";
 import LinkWithIcon from "@/components/LinkWithIcon";
@@ -64,8 +65,8 @@ export default function CashflowTrackerPage() {
           market my business on TikTok.
         </p>
         <p>
-          My videos did well and sales started to ramp up. I needed a better
-          way to track profits than on paper.
+          My videos did well and sales started to ramp up. I needed a better way
+          to track profits than on paper.
         </p>
 
         <ImageWithSkeleton
@@ -81,14 +82,10 @@ export default function CashflowTrackerPage() {
 
         <p>So I created this.</p>
 
-        <video
-          controls
-          preload="metadata"
+        <DemoVideo
           className="w-full rounded-lg border"
           src="/img/cashflow-demo.mp4"
-        >
-          Your browser does not support the video tag.
-        </video>
+        />
         <p className="text-xs text-muted-foreground">Demo video</p>
       </section>
 
@@ -114,8 +111,8 @@ export default function CashflowTrackerPage() {
           </li>
           <li>
             <strong>Automation</strong> — Python + FastAPI service running
-            scheduled jobs: Gmail ingestion with per-platform email parsers,
-            and a Playwright bot managing the Grailed relist cycle with its own
+            scheduled jobs: Gmail ingestion with per-platform email parsers, and
+            a Playwright bot managing the Grailed relist cycle with its own
             SQLite action log.
           </li>
         </ul>
@@ -123,8 +120,7 @@ export default function CashflowTrackerPage() {
 
       <details className="group rounded-lg border px-5 py-4">
         <summary className="cursor-pointer text-sm font-medium sm:text-base">
-          If you have a use case for this, here&apos;s how to set it up
-          locally:
+          If you have a use case for this, here&apos;s how to set it up locally:
         </summary>
 
         <div className="mt-4 flex flex-col gap-4 text-sm sm:text-base">

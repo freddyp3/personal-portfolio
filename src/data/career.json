@@ -8,14 +8,15 @@
       "positions": [
         {
           "title": "AI Engineer Intern",
-          "start": "Apr 2026",
-          "end": "Aug 2026",
+          "start": "May 2026",
+          "end": "Sep 2026",
           "description": [
-            "Scoped and shipped an AI customer support agent for customers in 4 countries that answers product questions straight from company docs at $0.03 a ticket versus $8 of staff time to save about $16K a year while clearing an 800+ ticket backlog",
-            "Engineered a RAG pipeline with hybrid search on Azure AI Search over 4,000 pages of bilingual docs and lifted auto-resolution from 34% to 44% with query rewriting for the German and acronym-heavy queries behind most escalations",
-            "Fine-tuned a PyTorch reranker on 2,000 past support tickets that lifted retrieval recall@5 from 77% to 87%",
-            "Built a 300-case regression eval that caught a 6-point drop in a GPT-4o to GPT-4.1 upgrade before it reached customers",
-            "Cut monthly budget-vs-actuals reporting from 6+ hours to 5 minutes with a LangChain agent that corrects vendor names and accounting codes, turns its confident answers into reusable rules and flags unsure ones for finance review"
+            "Saved $16K a year in staff time with an AI support agent that answers customers in English and German",
+            "Deployed the agent as a FastAPI service on Azure Kubernetes that streams each reply to the customer within 3 seconds and hands anything it can't answer to the help desk through a webhook",
+            "Raised auto-resolution from 32% to 43% with a RAG pipeline on Azure using hybrid search over 4,000 pages of company docs after tracing most escalations to German and acronym-heavy customer questions",
+            "Improved recall@5 from 77% to 87% by fine-tuning a PyTorch reranker on the company's past support tickets",
+            "Caught a 6-point drop in correct answers from a silent model update with an automated 300-case regression eval",
+            "Cut monthly budget reporting from 6+ hours to 5 minutes with a LangChain agent that turns NetSuite exports into Excel reports through Microsoft Graph API and sends unsure expenses to finance for human review"
           ]
         }
       ]
@@ -30,9 +31,10 @@
           "start": "Jan 2026",
           "end": "Apr 2026",
           "description": [
-            "Designed and deployed the FastAPI recommendation engine powering the company's React Native chair-fitting app, filtering out chairs that don't fit each user's body measurements and ranking the rest with weighted ergonomic scoring",
-            "Cut photo upload failures on slow mobile networks by 70% by sending images straight to S3 through presigned URLs",
-            "Wrote 40+ Jest tests for sign-in and chair recommendation flows that stopped bugs from reaching QA"
+            "Built the FastAPI REST API that recommends best-fit chairs to 300+ users by scoring each chair's ergonomic attributes against their body measurements from the React Native app",
+            "Shipped PostgreSQL schema changes through Alembic without losing user data or breaking older app versions",
+            "Cut failed photo uploads on slow mobile networks by 70% with presigned URLs that send images straight to S3",
+            "Kept the app and API in sync by testing requests against Pydantic models in GitHub Actions CI/CD"
           ]
         }
       ]
@@ -46,8 +48,8 @@
           "title": "Teaching Assistant | CPSC 310, CPSC 110",
           "start": "Aug 2025",
           "description": [
-            "Supported 900+ students in UBC's largest computer science course, achieving a 4.9/5 average student evaluation score",
-            "Wrote randomized JavaScript quiz questions and Python autograders used across CPSC 310 - Intro to Software Engineering"
+            "Earned a 4.9/5 average student rating while teaching 900+ students in UBC's largest computer science course",
+            "Wrote 250+ randomized JavaScript quiz questions and Python autograders for CPSC 310 - Intro to Software Engineering"
           ]
         }
       ]
