@@ -2,7 +2,7 @@
   "projects": [
     {
       "name": "Apex FSD - StormHacks 2026 (Winner)",
-      "description": "Won Best Python Hack at Western Canada's largest hackathon with a self-driving AI that plays Forza Horizon by physically turning a real steering wheel through a 100 Hz PySDL2 control loop, and hands control back the instant a human grabs it. A PilotNet-style PyTorch CNN steers from screen pixels plus live telemetry, trained with DAgger so every manual correction becomes new training data. Saliency maps caught it fixating on roadside signs, so we cut the crash footage that taught it.",
+      "description": "An AI that drives Forza Horizon by physically turning a real steering wheel, and lets go the instant a human grabs it. Won Best Python Hack at Western Canada's largest hackathon.",
       "image": "/img/apex-fsd.jpg",
       "tags": ["Python", "PyTorch", "OpenCV", "SDL2"],
       "links": [
@@ -20,7 +20,7 @@
     },
     {
       "name": "Scheming - HackMIT 2026",
-      "description": "Built a lie detector for AI models that flags when a model's words contradict its own private reasoning, citing the exact line as evidence. Tested on AI agents playing Werewolf, it matched human judgment on 94% of 300 hand-labeled turns. Run on 1,500 real coding-agent sessions, it caught agents claiming things like \"all tests pass\" that their own logs contradicted, at 92% precision.",
+      "description": "AI agents play Mafia/Werewolf against each other. Scheming reads their private reasoning and flags the exact line where an agent says one thing and plans another. Run on real coding-agent sessions, it caught agents telling users \"all tests pass\" when their own logs said otherwise.",
       "image": "/img/scheming.jpg",
       "tags": ["Python", "Claude", "OpenAI", "Modal", "MongoDB"],
       "links": [
@@ -43,7 +43,7 @@
     },
     {
       "name": "YouTube Shorts AI Optimizer",
-      "description": "An AI agent that reviews draft YouTube Shorts before publishing and predicts where viewers will swipe away. Built on my own channel, which grew from 1.2K to 38K subscribers and 45M views, and now used by 100+ other creators. Its Gemini retention predictions hit 0.45 Spearman on 85 held-out Shorts, beating a veteran creator's 0.25. It ships as a remote MCP server on Cloud Run, where Cloud Tasks retries on idempotent workers completed 99.9% of reviews at launch, OpenTelemetry tracing and parallel tool calls cut p95 latency from 95s to 18s, and isolating comment text behind read-only tools blocked 98.5% of 200 prompt-injection attacks.",
+      "description": "An AI copilot that watches a draft YouTube Short and predicts the second viewers will swipe away, before it's ever posted. Built on a channel that reached 45M views, its predictions beat a veteran creator's instincts, and 100+ creators have used it.",
       "image": "",
       "tags": [
         "Python",
@@ -60,7 +60,7 @@
     },
     {
       "name": "GitIntent - UC Berkeley AI LLM Hackathon 2026",
-      "description": "A shared memory layer for AI coding agents that records every change with the prompt behind it. Agents recall failed attempts before repeating them, which helped them solve 8.3% more DeepSWE benchmark tasks than the same agent without memory across 36 runs. Every code change is indexed in Redis Stack with HNSW and BM25 under a SHA-256 hash, and the hybrid vector and keyword retrieval engine reaches ~93% recall@5.",
+      "description": "A shared memory for AI coding agents, which otherwise start every session with no record of what the last one tried. Every attempt is saved with the reasoning behind it, and agents with access solved 8.3% more tasks on the DeepSWE benchmark than the same agent without.",
       "image": "/img/gitintent.jpg",
       "tags": [
         "Python",
@@ -84,7 +84,7 @@
     },
     {
       "name": "Inventory & Sales Automation Platform",
-      "description": "Custom infrastructure for my cross-platform resale business on Grailed, Depop, and eBay, which has tracked 60+ international orders and $6K+ in sales. A concurrent Go worker turns sale emails from Gmail and Pub/Sub into orders and skips duplicates by order ID, a Playwright service reposts listings weekly on a 30-day bump-then-reduce price cycle, and caching report queries in Redis, cleared on each new order, sped up the sales dashboard API 36×.",
+      "description": "The backend for my resale business across Grailed, Depop, and eBay. It reads incoming sale emails and logs orders on its own, reposts stale listings, and steps prices down until items sell. $6K+ in sales tracked without a single order entered by hand.",
       "href": "/projects/cashflow-tracker",
       "image": "/img/cashflow.png",
       "tags": [
@@ -109,7 +109,7 @@
     },
     {
       "name": "Premier Predictor",
-      "description": "Scraped and cleaned English Premier League match data to train a model that predicts match outcomes. It uses a Random Forest classifier built with pandas and scikit-learn.",
+      "description": "A Random Forest model trained on years of scraped Premier League data to predict match results. Built to find out whether a model could beat the pundits' track record.",
       "image": "/img/predictor.png",
       "tags": ["Python", "pandas", "scikit-learn", "BeautifulSoup", "Jupyter"],
       "links": [
@@ -122,7 +122,7 @@
     },
     {
       "name": "Java OOP Quiz Application",
-      "description": "A Java study tool for CPSC 210 students, used by 5+ peers. It has a layered architecture with interface-based abstraction and JSON save/load. It has 100% JUnit test coverage.",
+      "description": "A quiz app for CPSC 210 where the codebase doubles as the study material: every class and interface in it demonstrates a principle the course tests. Used by classmates to prepare for the final.",
       "image": "/img/quiz.png",
       "tags": ["Java", "Swing", "JUnit", "JSON"],
       "links": [
@@ -135,7 +135,7 @@
     },
     {
       "name": "Vital-Sense Radar",
-      "description": "A non-contact monitor that estimates breathing and heart rate from Wi-Fi Channel State Information. Two ESP32-S3 boards send and receive the signal, and Python (NumPy, SciPy) processes it into vitals. No camera or wearable is needed.",
+      "description": "A heart rate and breathing monitor that uses Wi-Fi alone and can detect through walls. Two ESP32 boards detect the tiny signal disturbances caused by a chest rising and falling, with no camera, wearable, or contact.",
       "image": "",
       "tags": ["ESP32-S3", "ESP-IDF", "Wi-Fi CSI", "Python", "NumPy", "SciPy"],
       "links": [
@@ -148,7 +148,7 @@
     },
     {
       "name": "Chelsea FC Play Predictor",
-      "description": "A data pipeline that pulls Chelsea match data from FBref and Understat into PostgreSQL and computes features automatically. It feeds 7 statistical and ML models. An EV optimizer and a Streamlit dashboard sit on top.",
+      "description": "Seven models that each predict a different event in the next Chelsea match, fed by a pipeline that pulls and prepares every game automatically. An expected-value optimizer ranks which predictions are worth acting on.",
       "image": "",
       "tags": [
         "Python",
@@ -162,7 +162,7 @@
     },
     {
       "name": "Photo Time Capsule",
-      "description": "A hackathon mobile app for making time-capsule photo albums. Users capture photos with the camera and discuss them in comment threads. Built with React Native, Firebase, and Expo Go.",
+      "description": "A shared photo album that seals after friends fill it and opens for everyone at once later, with comment threads to relive it. Built in a hackathon weekend with React Native and Firebase.",
       "image": "/img/momento.png",
       "tags": ["React Native", "Firebase", "Expo Go"],
       "links": [
@@ -175,7 +175,7 @@
     },
     {
       "name": "Minecraft Data Science Project",
-      "description": "Analyzed player engagement and subscription behavior on a Minecraft research server. It uses KNN classification with cross-validation to predict which players subscribe. Built in R with tidymodels.",
+      "description": "A research server logged everything its Minecraft players did, and this project uses that data to predict which players would go on to subscribe. Play patterns turned out to be a reliable signal.",
       "image": "/img/minecraft.png",
       "tags": ["R", "tidyverse", "tidymodels", "ggplot2", "Jupyter"],
       "links": [
