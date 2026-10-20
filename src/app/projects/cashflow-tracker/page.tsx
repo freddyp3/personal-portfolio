@@ -8,26 +8,32 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "cashflow-tracker",
+  title: "Cashflow Tracker",
   description:
     "Full-stack sales and inventory tracker for a cross-platform clothing reselling business.",
 };
 
-const ARCHITECTURE_DIAGRAM = `┌──────────────┐     /api      ┌───────────────────┐          ┌────────────┐
+const ARCHITECTURE_DIAGRAM = `┌──────────────┐     /api      ┌───────────────────┐   JPA    ┌────────────┐
 │  React SPA   │ ────────────► │  Spring Boot API  │ ───────► │ PostgreSQL │
-│ (Vite + TS)  │               │     (Java 21)     │   JPA    │            │
-└──────────────┘               └───────────────────┘          └────────────┘
-                                        ▲
-                                        │ REST
-                               ┌────────┴────────┐
-                               │ Python FastAPI  │──► Gmail API
-                               │ automation svc  │──► Grailed (Playwright)
-                               └─────────────────┘`;
+│ (Vite + TS)  │               │     (Java 21)     │          └────────────┘
+└──────────────┘               │                   │ ───────► ┌────────────┐
+                               └───────────────────┘  cache   │   Redis    │
+                                         ▲                    └────────────┘
+                                         │ PUT /api/orders/external/{platform}/{ref}
+                               ┌─────────┴─────────┐   pull   ┌────────────┐   push  ┌───────────┐
+                               │  Go worker        │ ◄─────── │  Pub/Sub   │ ◄────── │ Gmail API │
+                               │ (goroutine pool)  │          └────────────┘ watch() └───────────┘
+                               └───────────────────┘`;
+
+const DOCKER_COMMANDS = `cp .env.example .env
+docker compose up --build`;
 
 const SETUP_COMMANDS = `# database
 createdb cashflow_tracker_db
 psql cashflow_tracker_db -f app/database/create_tables.sql
 psql cashflow_tracker_db -f app/database/create_views.sql
+psql cashflow_tracker_db -f app/database/migrations/002_external_ref.sql
+psql cashflow_tracker_db -f app/database/migrations/003_coordinates_platforms.sql
 
 # backend — http://localhost:8080
 ./gradlew :app:bootRun
@@ -46,7 +52,7 @@ export default function CashflowTrackerPage() {
       />
 
       <div className="flex flex-col items-start gap-4">
-        <h1 className="title text-4xl sm:text-5xl">cashflow-tracker</h1>
+        <h1 className="title text-4xl sm:text-5xl">Cashflow Tracker</h1>
         <Link
           href="https://github.com/freddyp3/cashflow-tracker"
           target="_blank"
@@ -89,6 +95,45 @@ export default function CashflowTrackerPage() {
         <p className="text-xs text-muted-foreground">Demo video</p>
       </section>
 
+      <section className="flex flex-col gap-4 text-sm sm:text-base">
+        <h2 className="title text-2xl sm:text-3xl">what I use it for</h2>
+        <ImageWithSkeleton
+          src="/img/cashflow-home.png"
+          alt="Home dashboard"
+          width={1600}
+          height={900}
+          sizes="(max-width: 640px) calc(100vw - 4rem), 640px"
+          quality={75}
+          containerClassName="w-full rounded-lg border"
+          className="w-full rounded-lg"
+        />
+        <p>
+          The home page is what I check most. Revenue, profit, margin and units
+          for the month, how that compares to last month, and revenue against
+          profit by month.
+        </p>
+        <p>
+          When a sale comes in on Grailed, Depop or eBay the worker picks up the
+          confirmation email and the order shows up on its own. If I sell
+          something in person, I add it by hand on the Orders page. Products
+          hold what I paid for each item, so profit is worked out per unit sold
+          instead of me doing it after the fact.
+        </p>
+        <p>
+          Then I have insights for if I want to see anything closer. I also have
+          a cool globe visualization where every order shipped to is shown on a
+          globe. More screenshots are in{" "}
+          <Link
+            href="https://github.com/freddyp3/cashflow-tracker/tree/main/docs/ui"
+            target="_blank"
+            className="underline underline-offset-4 hover:text-muted-foreground"
+          >
+            docs/ui/
+          </Link>
+          .
+        </p>
+      </section>
+
       <section className="flex flex-col gap-4">
         <h2 className="title text-2xl sm:text-3xl">how it&apos;s built</h2>
 
@@ -107,15 +152,36 @@ export default function CashflowTrackerPage() {
             <strong>Backend</strong> — Spring Boot 3 (Java 21) REST API with
             controller/service/repository layering, JPA entities, and DTOs at
             the API boundary. Data lives in PostgreSQL, with SQL views powering
-            the stats.
+            the stats. Stats responses are cached in Redis and evicted on every
+            order/product write — measured at <strong>20.6x</strong> overall
+            across the ten stats endpoints (per-endpoint 10.3x–44.7x) on a
+            20,000-order synthetic dataset.
           </li>
           <li>
-            <strong>Automation</strong> — Python + FastAPI service running
-            scheduled jobs: Gmail ingestion with per-platform email parsers, and
-            a Playwright bot managing the Grailed relist cycle with its own
-            SQLite action log.
+            <strong>Worker</strong> — Go service: Gmail{" "}
+            <code className="rounded-lg bg-accent px-1 py-0.5 text-xs">
+              watch()
+            </code>{" "}
+            pushes new-mail notifications to Google Pub/Sub; a streaming-pull
+            worker with a configurable goroutine pool fetches each email, parses
+            Grailed/Depop/eBay sale confirmations, and upserts exactly one order
+            per marketplace order ID through the Spring API. Unparseable emails
+            are nacked and dead-lettered.
           </li>
         </ul>
+
+        <p className="text-sm sm:text-base">
+          <strong>How I test it.</strong>{" "}
+          <code className="rounded-lg bg-accent px-1 py-0.5 text-xs">
+            ./scripts/verify.sh
+          </code>{" "}
+          runs everything and fails if any part does. On the frontend
+          that&apos;s ESLint, tsc and Vitest with Testing Library, including axe
+          accessibility checks on each page. The backend runs its JUnit tests
+          against a real PostgreSQL through Testcontainers, so the SQL views are
+          tested for real and not mocked. The worker runs go vet and go test in
+          Docker, with sample Grailed, Depop and eBay emails as parser fixtures.
+        </p>
       </section>
 
       <details className="group rounded-lg border px-5 py-4">
@@ -124,6 +190,20 @@ export default function CashflowTrackerPage() {
         </summary>
 
         <div className="mt-4 flex flex-col gap-4 text-sm sm:text-base">
+          <h3 className="font-medium">Quick start (Docker)</h3>
+
+          <pre className="overflow-x-auto rounded-lg bg-accent px-5 py-4 font-mono text-xs leading-[1.75]">
+            {DOCKER_COMMANDS}
+          </pre>
+
+          <p>
+            UI on localhost:3000, API on localhost:8080, worker on
+            localhost:8090. The default stack runs the worker against the
+            Pub/Sub emulator with no Gmail token.
+          </p>
+
+          <h3 className="font-medium">Native development</h3>
+
           <p>Requires Java 21, Node.js 20+, and PostgreSQL.</p>
 
           <pre className="overflow-x-auto rounded-lg bg-accent px-5 py-4 font-mono text-xs leading-[1.75]">
@@ -135,13 +215,13 @@ export default function CashflowTrackerPage() {
             <code className="rounded-lg bg-accent px-1 py-0.5 text-xs">
               app/src/main/resources/application.properties
             </code>
-            . The automation service is optional — see{" "}
+            . The Gmail worker is optional — see{" "}
             <Link
-              href="https://github.com/freddyp3/cashflow-tracker/blob/main/automation/README.md"
+              href="https://github.com/freddyp3/cashflow-tracker/blob/main/worker/README.md"
               target="_blank"
               className="underline underline-offset-4 hover:text-muted-foreground"
             >
-              automation/README.md
+              worker/README.md
             </Link>
             .
           </p>

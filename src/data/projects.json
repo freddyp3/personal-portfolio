@@ -19,6 +19,30 @@
       ]
     },
     {
+      "name": "Cashflow Tracker",
+      "description": "Sales and inventory tracker for my clothing resale business across Grailed, Depop, and eBay. A Go worker listens for sale emails through Gmail push and Pub/Sub and logs each order on its own, and Redis caching makes the stats dashboards 20.6x faster.",
+      "href": "/projects/cashflow-tracker",
+      "image": "/img/cashflow.png",
+      "tags": [
+        "Java",
+        "Spring Boot",
+        "Go",
+        "React",
+        "TypeScript",
+        "PostgreSQL",
+        "Redis",
+        "Pub/Sub",
+        "Docker"
+      ],
+      "links": [
+        {
+          "name": "Source",
+          "href": "https://github.com/freddyp3/cashflow-tracker",
+          "icon": "github"
+        }
+      ]
+    },
+    {
       "name": "Scheming - HackMIT 2026",
       "description": "AI agents play Mafia/Werewolf against each other. Scheming reads their private reasoning and flags the exact line where an agent says one thing and plans another. Run on real coding-agent sessions, it caught agents telling users \"all tests pass\" when their own logs said otherwise.",
       "image": "/img/scheming.jpg",
@@ -40,23 +64,6 @@
           "icon": "globe"
         }
       ]
-    },
-    {
-      "name": "YouTube Shorts AI Optimizer",
-      "description": "An AI copilot that watches a draft YouTube Short and predicts the second viewers will swipe away, before it's ever posted. Built on a channel that reached 45M views, its predictions beat a veteran creator's instincts, and 100+ creators have used it.",
-      "image": "",
-      "tags": [
-        "Python",
-        "FastAPI",
-        "Claude API",
-        "Gemini API",
-        "MCP",
-        "OpenTelemetry",
-        "Google Cloud Run",
-        "BigQuery",
-        "Docker"
-      ],
-      "links": []
     },
     {
       "name": "GitIntent - UC Berkeley AI LLM Hackathon 2026",
@@ -83,29 +90,21 @@
       ]
     },
     {
-      "name": "Inventory & Sales Automation Platform",
-      "description": "The backend for my resale business across Grailed, Depop, and eBay. It reads incoming sale emails and logs orders on its own, reposts stale listings, and steps prices down until items sell. $6K+ in sales tracked without a single order entered by hand.",
-      "href": "/projects/cashflow-tracker",
-      "image": "/img/cashflow.png",
+      "name": "YouTube Shorts AI Optimizer",
+      "description": "An AI copilot that watches a draft YouTube Short and predicts the second viewers will swipe away, before it's ever posted. Built on a channel that reached 45M views, its predictions beat a veteran creator's instincts, and 100+ creators have used it.",
+      "image": "",
       "tags": [
-        "Java",
-        "Spring Boot",
-        "Go",
-        "React",
-        "TypeScript",
-        "PostgreSQL",
-        "Redis",
-        "Pub/Sub",
-        "Docker",
-        "Python"
+        "Python",
+        "FastAPI",
+        "Claude API",
+        "Gemini API",
+        "MCP",
+        "OpenTelemetry",
+        "Google Cloud Run",
+        "BigQuery",
+        "Docker"
       ],
-      "links": [
-        {
-          "name": "Source",
-          "href": "https://github.com/freddyp3/cashflow-tracker",
-          "icon": "github"
-        }
-      ]
+      "links": []
     },
     {
       "name": "Premier Predictor",
