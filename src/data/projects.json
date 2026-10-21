@@ -19,7 +19,7 @@
       ]
     },
     {
-      "name": "Cashflow Tracker",
+      "name": "Email Synced Cashflow Tracker",
       "description": "Sales and inventory tracker for my clothing resale business across Grailed, Depop, and eBay. A Go worker listens for sale emails through Gmail push and Pub/Sub and logs each order on its own, and Redis caching makes the stats dashboards 20.6x faster.",
       "href": "/projects/cashflow-tracker",
       "image": "/img/cashflow.png",

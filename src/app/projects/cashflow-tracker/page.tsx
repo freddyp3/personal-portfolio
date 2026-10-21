@@ -8,7 +8,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Cashflow Tracker",
+  title: "Email Synced Cashflow Tracker",
   description:
     "Full-stack sales and inventory tracker for a cross-platform clothing reselling business.",
 };
@@ -52,7 +52,9 @@ export default function CashflowTrackerPage() {
       />
 
       <div className="flex flex-col items-start gap-4">
-        <h1 className="title text-4xl sm:text-5xl">Cashflow Tracker</h1>
+        <h1 className="title text-4xl sm:text-5xl">
+          Email Synced Cashflow Tracker
+        </h1>
         <Link
           href="https://github.com/freddyp3/cashflow-tracker"
           target="_blank"
