@@ -1,0 +1,1117 @@
+.root {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgb(245, 246, 242);
+  color: #111;
+  font-family:
+    var(--font-geist-sans),
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
+  font-size: 13px;
+  line-height: 1.45em;
+  letter-spacing: -0.01em;
+  overflow: hidden;
+}
+
+/* ---------- map ---------- */
+
+.mapContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+.mapLines {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.node {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  opacity: 0;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.node:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.link {
+  opacity: 0;
+}
+
+.node .number {
+  display: block;
+  width: 24px;
+  height: 24px;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 24px;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.connectedNode .number {
+  color: #888;
+}
+
+.highlightedNode .number,
+.currentNode .number {
+  display: none;
+}
+
+.node.newlyVisible {
+  opacity: 1;
+  transition: opacity 1000ms;
+}
+
+.link.newlyVisible {
+  opacity: 1;
+  transition: opacity 1000ms;
+}
+
+.node.previouslyVisible,
+.link.previouslyVisible {
+  opacity: 1;
+  transition: opacity 1000ms;
+}
+
+.nodeInner {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 100ms ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.node:hover .nodeInner {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.homeNode .nodeInner svg {
+  animation: rotate 10s linear infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.node.highlightedNode:not(.currentNode) .nodeInner::after {
+  content: "";
+  position: absolute;
+  background: #111;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: blink 1s infinite;
+}
+
+.nodeType_experience.highlightedNode:not(.currentNode) .nodeInner::after {
+  top: 60%;
+}
+
+.node.highlightedNode.connectedNode:not(.currentNode) .nodeInner::after {
+  background: #888;
+}
+
+.node.informationNode:not(.currentNode) {
+  cursor: help;
+}
+
+.node.informationNode .nodeInner::after {
+  content: "";
+  position: absolute;
+  background: rgb(245, 246, 242);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.node.connectedNode:not(.currentNode) {
+  color: #888;
+}
+
+.node.currentNode .nodeInner::after {
+  content: "×";
+  font-size: 13px;
+  letter-spacing: -0.01em;
+  position: absolute;
+  border-radius: 50%;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #111;
+}
+
+.node.currentNode.nodeType_experience .nodeInner::after {
+  top: 55%;
+}
+
+/* About me never shows the "×" when open — keep its centre dot instead */
+.node.informationNode.currentNode .nodeInner::after {
+  content: "";
+  top: 50%;
+}
+
+.node.informationNode.currentNode .nodeInner::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+}
+
+.nodeLabel {
+  display: block;
+  position: absolute;
+  width: max-content;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -3px);
+  pointer-events: none;
+  text-align: center;
+  transition: opacity 200ms;
+}
+
+.nodeLabel h2,
+.nodeLabel h3 {
+  white-space: nowrap;
+}
+
+.node.connectedNode .nodeLabel {
+  color: #888;
+}
+
+.node .nodeLabel span {
+  display: inline-block;
+}
+
+.nodeLabel h2 {
+  font-size: 13px;
+  letter-spacing: -0.01em;
+  font-weight: normal;
+  background: rgb(245, 246, 242);
+  display: inline;
+  border-radius: 5px;
+  padding: 1px 3px;
+  margin: 0;
+}
+
+.nodeLabel h3 {
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: #888;
+  border-radius: 3px;
+  background: rgb(245, 246, 242);
+  display: inline;
+  padding: 1px 3px;
+  position: relative;
+  top: 2px;
+  opacity: 1;
+  transition: opacity 200ms;
+  margin: 0;
+}
+
+.rootNode .nodeLabel h3,
+.currentNode .nodeLabel h3,
+.node:hover .nodeLabel h3 {
+  opacity: 1;
+}
+
+/* "click me" arrow pointing at the orange root node itself: sits just right
+   of the flower, vertically centred on it */
+.clickHint {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 2px;
+  pointer-events: none;
+  white-space: nowrap;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ff5f1f;
+}
+
+.clickHintArrow {
+  display: inline-block;
+  animation: hintNudge 1.2s ease-in-out infinite;
+}
+
+@keyframes hintNudge {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clickHintArrow {
+    animation: none;
+  }
+}
+
+.node.visited:not(.currentNode) h2 {
+  text-decoration: line-through;
+  text-decoration-color: #111;
+}
+
+.node.visited:not(.currentNode) h3 {
+  text-decoration: line-through;
+  text-decoration-color: #888;
+}
+
+.link {
+  stroke: #111;
+  stroke-width: 1px;
+  fill: none;
+}
+
+.link.secondaryLink {
+  stroke-dasharray: 5, 5;
+  stroke-width: 1px;
+}
+
+.link.connectedLink {
+  stroke-dasharray: 2, 10;
+  stroke-width: 2px;
+  stroke: #bbb;
+}
+
+/* ---------- linked hover (map <-> panel) ---------- */
+
+.mapContainer.hasHover .node,
+.mapContainer.hasHover .link {
+  transition: opacity 200ms;
+}
+
+.mapContainer.hasHover .node:not(.inHoverPath) {
+  opacity: 0.3;
+}
+
+.mapContainer.hasHover .link:not(.inHoverPath) {
+  opacity: 0.2;
+}
+
+.mapContainer.hasHover .link.inHoverPath {
+  stroke-width: 1.5px;
+}
+
+.node.hoverNode .nodeInner {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ---------- page column ---------- */
+
+/* 600px column like the reference: the 420px card sits inside it and the
+   floating media are positioned against the whole column, so they spill
+   ~90px past the card on each side. The column stays on-screen (>=16px from
+   the edge) while the card's right edge stays at the shared 6vw margin. */
+.page {
+  position: fixed;
+  top: 0;
+  right: max(16px, calc(6vw - 90px));
+  bottom: 0;
+  width: 600px;
+  z-index: 2;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.pageContainer {
+  width: 420px;
+  margin-right: calc(6vw - max(16px, calc(6vw - 90px)));
+  position: relative;
+  /* starts above all media; hover raises card/media via stack.ts */
+  z-index: 50;
+  pointer-events: all;
+}
+
+.pageContainer::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 20px;
+  height: 25px;
+  background: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255));
+  pointer-events: none;
+  border-radius: 0 0 0 7px;
+  opacity: 0;
+  transition: opacity 800ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.showGradient .pageContainer::after {
+  opacity: 1;
+}
+
+.mainContent {
+  overflow-y: auto;
+  border-radius: 7px;
+  -webkit-overflow-scrolling: touch;
+  max-height: calc(100vh - 100px);
+  position: relative;
+  background-color: rgb(255, 255, 255);
+}
+
+.mainContent.heightAnim {
+  transition: height 800ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.headerContent {
+  background-color: rgb(255, 255, 255);
+  border: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  border-radius: 7px;
+  padding: 14px 25px 12px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  width: 100%;
+  user-select: none;
+  transition: background-color 200ms;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.headerContent .pageTitlesType {
+  border-bottom: none !important;
+  padding: 0 !important;
+}
+
+.group {
+  background-color: rgb(255, 255, 255);
+  border-radius: 7px;
+  padding: 22px 25px 21px;
+}
+
+.pageMainTitle {
+  margin-left: 25px;
+  margin-top: 5px;
+}
+
+.pageMainTitle h2 {
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  font-weight: normal;
+  margin: 0;
+}
+
+.pageMainTitle h4 {
+  margin: 2px 0 0;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: #888;
+}
+
+.closePage {
+  margin-left: auto;
+  width: 20px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  position: absolute;
+  top: -7px;
+  right: -5px;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  padding: 0;
+}
+
+.closePage::after {
+  content: "×";
+  display: inline-block;
+  font-size: 14px;
+  position: relative;
+  top: -2px;
+}
+
+.pageContentInner {
+  padding: 20px 0 0;
+}
+
+.pageContentInner + .tabs {
+  padding-top: 25px;
+}
+
+.pageIndex {
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+}
+
+.pageTab {
+  width: 100%;
+}
+
+.tabTitles {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px dashed #111;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+
+.pageTitlesType {
+  cursor: default;
+}
+
+.pageTab:first-child .tabTitles {
+  padding-top: 0;
+}
+
+.pageTab:not(.tabOpen):last-child .tabTitles {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.tabOpen .tabTitles {
+  border-bottom: none;
+}
+
+.tabIcon {
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tabTitle {
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.tabIndicator {
+  margin-left: auto;
+}
+
+.tabIndicator::after {
+  content: "+";
+  display: inline-block;
+  font-size: 14px;
+  line-height: 14px;
+  position: relative;
+  top: -2px;
+}
+
+.tabTitles:hover .tabIndicator::after {
+  content: "↓";
+  font-size: 12px;
+  top: 0;
+}
+
+.indexIndicator::after {
+  content: "←" !important;
+  font-size: 13px;
+  top: 0;
+}
+
+.tabOpen .tabIndicator::after {
+  content: "–";
+}
+
+.tabOpen .tabTitles:hover .tabIndicator::after {
+  content: "↑";
+  font-size: 12px;
+  top: 0;
+}
+
+.tabContent {
+  display: none;
+}
+
+.tabOpen .tabContent {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  padding-top: 10px;
+  border-top: 1px dashed #111;
+}
+
+.pageTab:last-child .tabContent {
+  padding-bottom: 0;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tabDescription {
+  margin: 5px 0 15px;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  margin-left: 25px;
+  position: relative;
+}
+
+/* line the description up with the list titles below it (no first-line
+   indent from the generic panel paragraph rule) */
+.pageContainer p.tabDescription {
+  text-indent: 0;
+  margin: 5px 0 15px 25px;
+}
+
+.list li {
+  display: flex;
+  flex-direction: column;
+}
+
+li + li.yearGroup {
+  margin-top: 10px;
+}
+
+li.yearGroup {
+  margin-left: 25px;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #111;
+}
+
+.list a {
+  display: flex;
+  flex-direction: row;
+  color: inherit;
+  text-decoration: none;
+}
+
+.itemId {
+  width: 25px;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.itemId.itemIdHighlighted::after,
+.indexLink:hover .itemId::after {
+  content: "✶";
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 0;
+  top: 2px;
+  left: 0;
+  position: relative;
+  color: #111;
+}
+
+.indexLink:hover .itemId::after {
+  content: "●";
+  font-size: 7px;
+  top: 0;
+  left: 1.5px;
+}
+
+.indexLink.rowHovered .itemId::after {
+  content: "●";
+  font-weight: 300;
+  font-size: 7px;
+  line-height: 0;
+  top: 0;
+  left: 1.5px;
+  position: relative;
+  color: #111;
+}
+
+.itemId.itemIdHighlighted {
+  animation: blink 1s infinite;
+}
+
+.indexLink.visited h2 {
+  text-decoration: line-through;
+  text-decoration-color: #111;
+}
+
+.indexLink.visited h3 {
+  text-decoration: line-through;
+  text-decoration-color: #888;
+}
+
+.highlightedItem .itemId {
+  animation: blink 1s infinite;
+}
+
+.itemTitle {
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  flex-shrink: 0;
+  width: 320px;
+}
+
+.itemTitle h2 {
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  font-weight: normal;
+  margin: 0;
+  display: inline;
+}
+
+.itemTitle h3 {
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: #888;
+  margin: 2px 0 0;
+}
+
+.courseList {
+  list-style: disc;
+  margin: 0;
+  padding-left: 42px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+}
+
+.tabMetadata li {
+  margin-left: 25px;
+}
+
+.metaSubtitle p {
+  text-indent: 0 !important;
+  margin: 0;
+}
+
+.metaTitle {
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #888;
+  margin-top: 2px;
+  display: block;
+}
+
+.pageContainer p {
+  text-indent: 25px;
+  font-size: 14px;
+  margin: 0 0 8px;
+}
+
+.pageContainer p a {
+  color: #111;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.pageContainer p a:hover {
+  text-decoration-style: dashed;
+}
+
+.panelResume {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+
+.panelResume a {
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #111;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.panelResume a:hover {
+  text-decoration-style: dashed;
+}
+
+/* ---------- media ---------- */
+
+.mediaItem {
+  overflow: hidden;
+  border-radius: 5px;
+  width: 250px;
+  position: absolute;
+  /* --rot: optional per-item tilt for hand-placed media */
+  transform: rotate(var(--rot, 0deg)) scale(0.9);
+  opacity: 0;
+  transition:
+    transform 400ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 400ms cubic-bezier(0.16, 1, 0.3, 1),
+    top 400ms cubic-bezier(0.16, 1, 0.3, 1),
+    left 400ms cubic-bezier(0.16, 1, 0.3, 1),
+    right 400ms cubic-bezier(0.16, 1, 0.3, 1),
+    bottom 400ms cubic-bezier(0.16, 1, 0.3, 1),
+    margin 30ms;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.mediaLandscape {
+  width: 360px;
+}
+
+.mediaItem.showMediaItem {
+  opacity: 1;
+  transform: rotate(var(--rot, 0deg)) scale(1);
+  pointer-events: all;
+  transition:
+    transform 800ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 800ms cubic-bezier(0.16, 1, 0.3, 1),
+    top 800ms cubic-bezier(0.16, 1, 0.3, 1),
+    left 800ms cubic-bezier(0.16, 1, 0.3, 1),
+    right 800ms cubic-bezier(0.16, 1, 0.3, 1),
+    bottom 800ms cubic-bezier(0.16, 1, 0.3, 1),
+    margin 30ms;
+}
+
+.mediaIndex1 {
+  top: 15%;
+  left: 10%;
+}
+
+.mediaIndex1.showMediaItem {
+  top: 5%;
+  left: 0%;
+}
+
+.mediaIndex2 {
+  bottom: 15%;
+  right: 15%;
+}
+
+.mediaIndex2.showMediaItem {
+  bottom: 5%;
+  right: 5%;
+}
+
+.mediaIndex3 {
+  top: 20%;
+  right: 10%;
+}
+
+.mediaIndex3.showMediaItem {
+  top: 10%;
+  right: 0;
+}
+
+.mediaIndex4 {
+  bottom: 20%;
+  left: 15%;
+}
+
+.mediaIndex4.showMediaItem {
+  bottom: 10%;
+  left: 5%;
+}
+
+/* ---------- media layout editor (?edit=1, dev only) ---------- */
+
+.mediaItem.mediaEditing {
+  cursor: move;
+  touch-action: none;
+  overflow: visible;
+}
+
+.mediaItem.mediaEditing img,
+.mediaItem.mediaEditing video {
+  cursor: move;
+  pointer-events: none;
+}
+
+.mediaItem.mediaSelected {
+  outline: 2px dashed #ff5f1f;
+  outline-offset: 3px;
+}
+
+.scaleHandle {
+  position: absolute;
+  right: -7px;
+  bottom: -7px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ff5f1f;
+  border: 2px solid #fff;
+  cursor: nwse-resize;
+}
+
+.layoutToolbar {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 1000;
+  max-width: 360px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: #111;
+  color: #f5f6f2;
+  font:
+    11px/1.5 ui-monospace,
+    monospace;
+  white-space: pre-wrap;
+  pointer-events: none;
+}
+
+.mediaItem img,
+.mediaItem video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  cursor: zoom-in;
+  display: block;
+}
+
+.mediaOpen img,
+.mediaOpen video {
+  opacity: 0;
+}
+
+/* ---------- lightbox ---------- */
+
+.gallery {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(10, 10, 10, 0);
+  z-index: 1000;
+  overflow: hidden;
+  cursor: zoom-out;
+  transition: all 0.5s ease;
+}
+
+.galleryIn {
+  background-color: rgba(10, 10, 10, 0.95);
+}
+
+.gallery img,
+.gallery video {
+  position: absolute;
+  transition: all 0.5s ease;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+/* ---------- mobile ---------- */
+
+@media (max-width: 1200px) {
+  .root {
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mapContainer {
+    pointer-events: auto;
+    position: relative;
+    height: min(80vw, 75vh);
+    width: 100vw;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .page {
+    position: relative;
+    width: 95vw;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    transform: none;
+    gap: 10px;
+    pointer-events: all;
+    margin: 10px auto 30px;
+    display: block;
+  }
+
+  .pageContainer {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .pageContainer::after {
+    display: none;
+  }
+
+  .mainContent {
+    height: auto !important;
+  }
+
+  .group {
+    padding: 5vw;
+  }
+
+  .headerContent {
+    padding: 5vw;
+  }
+
+  .tabTitles {
+    padding: 15px 0;
+  }
+
+  .itemTitle {
+    width: 90%;
+  }
+
+  .tabTitles:hover .tabIndicator::after {
+    top: -2px;
+    font-size: 14px;
+    content: "+";
+  }
+
+  .tabOpen .tabTitles:hover .tabIndicator::after {
+    top: -2px;
+    font-size: 14px;
+    content: "–";
+  }
+
+  .mediaItem {
+    width: 100%;
+    position: static;
+    overflow: visible;
+    z-index: 1;
+    transform: none;
+    opacity: 1;
+    transition: none;
+    pointer-events: all;
+  }
+
+  .mediaLandscape {
+    width: 100%;
+  }
+}
+
+/* ---------- small stacked: labels hidden (769–1200 keeps them) ---------- */
+
+@media (max-width: 768px) {
+  .nodeLabel {
+    display: none;
+  }
+
+  .rootNode .nodeLabel {
+    display: block;
+  }
+
+  .nodeLabel h3 {
+    opacity: 0;
+  }
+
+  .rootNode .nodeLabel h3,
+  .currentNode .nodeLabel h3,
+  .node:hover .nodeLabel h3 {
+    opacity: 1;
+  }
+}
+
+/* ---------- reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .homeNode .nodeInner svg {
+    animation: none;
+  }
+
+  .node.highlightedNode:not(.currentNode) .nodeInner::after,
+  .itemId.itemIdHighlighted,
+  .highlightedItem .itemId {
+    animation: none;
+    opacity: 1;
+  }
+
+  .node.newlyVisible,
+  .link.newlyVisible {
+    transition: opacity 50ms;
+  }
+
+  .mapContainer.hasHover .node,
+  .mapContainer.hasHover .link {
+    transition: none;
+  }
+
+  .mainContent.heightAnim {
+    transition: height 100ms;
+  }
+
+  .mediaItem,
+  .mediaItem.showMediaItem {
+    transition-duration: 50ms;
+  }
+}

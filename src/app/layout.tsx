@@ -1,5 +1,3 @@
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import Providers from "@/components/Providers";
 import { cn } from "@/lib/utils";
 import type { Metadata, Viewport } from "next";
@@ -43,11 +41,7 @@ export default function RootLayout({
         )}
       >
         <Providers>
-          <Header />
-          <div className="mx-auto flex max-w-3xl flex-col px-8">
-            <main className="grow">{children}</main>
-          </div>
-          <Footer />
+          <main>{children}</main>
         </Providers>
       </body>
     </html>

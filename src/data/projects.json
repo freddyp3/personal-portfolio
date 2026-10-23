@@ -21,7 +21,7 @@
     {
       "name": "Email Synced Cashflow Tracker",
       "description": "Sales and inventory tracker for my clothing resale business across Grailed, Depop, and eBay. A Go worker listens for sale emails through Gmail push and Pub/Sub and logs each order on its own, and Redis caching makes the stats dashboards 20.6x faster.",
-      "href": "/projects/cashflow-tracker",
+      "href": "/write-ups/cashflow-tracker",
       "image": "/img/cashflow.png",
       "tags": [
         "Java",
@@ -44,7 +44,7 @@
     },
     {
       "name": "Scheming - HackMIT 2026",
-      "description": "AI agents play Mafia/Werewolf against each other. Scheming reads their private reasoning and flags the exact line where an agent says one thing and plans another. Run on real coding-agent sessions, it caught agents telling users \"all tests pass\" when their own logs said otherwise.",
+      "description": "AI agents play Mafia/Werewolf against each other. Scheming reads their private reasoning and flags the exact line where an agent says one thing and plans another.",
       "image": "/img/scheming.jpg",
       "tags": ["Python", "Claude", "OpenAI", "Modal", "MongoDB"],
       "links": [

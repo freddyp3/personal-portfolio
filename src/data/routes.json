@@ -3,20 +3,32 @@
     {
       "path": "/",
       "name": "home",
-      "description": "Portfolio overview and recent projects",
+      "description": "Home page",
+      "showInNav": true
+    },
+    {
+      "path": "/about",
+      "name": "about",
+      "description": "Interactive map of experience, projects, hackathons, education and skills",
       "showInNav": true
     },
     {
       "path": "/projects",
       "name": "projects",
-      "description": "Portfolio projects showcase",
+      "description": "All projects",
       "showInNav": true
     },
     {
-      "path": "/contact",
+      "path": "/contact-me",
       "name": "contact",
       "description": "Contact form",
       "showInNav": true
+    },
+    {
+      "path": "/write-ups/cashflow-tracker",
+      "name": "cashflow write-up",
+      "description": "Full write-up of the Email Synced Cashflow Tracker",
+      "showInNav": false
     },
     {
       "path": "/privacy",

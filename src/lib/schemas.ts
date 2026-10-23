@@ -1,5 +1,6 @@
-import { type IconName } from "@/components/Icon";
 import { z } from "zod";
+
+type IconName = "github" | "globe" | "linkedin" | "mail";
 
 export const ContactFormSchema = z.object({
   name: z

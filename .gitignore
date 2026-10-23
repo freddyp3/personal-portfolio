@@ -37,3 +37,6 @@ next-env.d.ts
 
 # output files
 output/
+
+# raw source clips for media transcoding
+media-raw/
