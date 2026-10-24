@@ -1,115 +1,145 @@
 {
-  "gitintent": {
-    "/img/gitintent.jpg": {
-      "left": "3.17%",
-      "top": "8.81%",
-      "width": "300px",
-      "rotate": 0,
-      "z": 3
-    },
-    "/img/gitintent-berkeley.jpg": {
-      "left": "56.33%",
-      "top": "25.07%",
-      "width": "256px",
-      "rotate": 0,
-      "z": 4
-    },
-    "/img/gitintent-berkeley.mp4": {
-      "left": "-2.50%",
-      "top": "21.95%",
-      "width": "206px",
-      "rotate": 0,
-      "z": 1
-    },
-    "/img/gitintent-diagram.png": {
-      "left": "8.00%",
-      "top": "67.34%",
-      "width": "317px",
-      "rotate": 0,
-      "z": 5
-    }
-  },
   "scheming": {
-    "/img/scheming.jpg": {
-      "left": "43.50%",
-      "top": "7.05%",
-      "width": "330px",
-      "rotate": 0,
-      "z": 2
-    },
-    "/img/scheming-hackmit.mp4": {
-      "left": "13.33%",
-      "top": "20.87%",
-      "width": "199px",
+    "/img/scheming-demo.mp4": {
+      "top": "5%",
+      "left": "0%",
+      "width": "360px",
       "rotate": 0,
       "z": 1
     },
     "/img/hackmit-team.jpg": {
-      "left": "65.17%",
-      "top": "39.43%",
-      "width": "188px",
+      "bottom": "5%",
+      "right": "5%",
+      "width": "250px",
+      "rotate": 0,
+      "z": 2
+    },
+    "/img/scheming.jpg": {
+      "top": "10%",
+      "right": "0%",
+      "width": "360px",
       "rotate": 0,
       "z": 3
     },
-    "/img/scheming-demo.mp4": {
-      "left": "8.00%",
-      "top": "62.60%",
-      "width": "320px",
+    "/img/scheming-hackmit.mp4": {
+      "bottom": "10%",
+      "left": "5%",
+      "width": "250px",
+      "rotate": 0,
+      "z": 4
+    }
+  },
+  "gitintent": {
+    "/img/gitintent-diagram.png": {
+      "top": "5%",
+      "left": "0%",
+      "width": "360px",
+      "rotate": 0,
+      "z": 1
+    },
+    "/img/gitintent-berkeley.jpg": {
+      "bottom": "5%",
+      "right": "5%",
+      "width": "250px",
+      "rotate": 0,
+      "z": 2
+    },
+    "/img/gitintent.jpg": {
+      "top": "10%",
+      "right": "0%",
+      "width": "360px",
+      "rotate": 0,
+      "z": 3
+    },
+    "/img/gitintent-berkeley.mp4": {
+      "bottom": "10%",
+      "left": "5%",
+      "width": "250px",
+      "rotate": 0,
+      "z": 4
+    }
+  },
+  "apex-fsd": {
+    "/img/apex-fsd-dataset.jpg": {
+      "top": "5%",
+      "left": "0%",
+      "width": "360px",
+      "rotate": 0,
+      "z": 1
+    },
+    "/img/apex-fsd-demo.mp4": {
+      "bottom": "5%",
+      "right": "5%",
+      "width": "250px",
+      "rotate": 0,
+      "z": 2
+    },
+    "/img/apex-fsd-team.jpg": {
+      "top": "10%",
+      "right": "0%",
+      "width": "360px",
+      "rotate": 0,
+      "z": 3
+    },
+    "/img/apex-fsd-inference.mp4": {
+      "bottom": "10%",
+      "left": "5%",
+      "width": "250px",
       "rotate": 0,
       "z": 4
     }
   },
   "email-synced-cashflow-tracker": {
-    "/img/cashflow-demo.mp4": {
-      "left": "39.67%",
-      "top": "68.43%",
-      "width": "360px",
-      "rotate": 0,
-      "z": 0
-    },
     "/img/cashflow-home.png": {
-      "left": "-9.00%",
-      "top": "7.72%",
+      "top": "5%",
+      "left": "0%",
       "width": "360px",
-      "rotate": 0,
-      "z": 0
-    },
-    "/img/cashflow-tiktok-stats.png": {
-      "left": "58.50%",
-      "top": "10.16%",
-      "width": "250px",
-      "rotate": 0,
-      "z": 0
-    }
-  },
-  "apex-fsd": {
-    "/img/apex-fsd-team.jpg": {
-      "left": "46.67%",
-      "top": "60.70%",
-      "width": "300px",
-      "rotate": 0,
-      "z": 3
-    },
-    "/img/apex-fsd-demo.mp4": {
-      "left": "62.33%",
-      "top": "10.98%",
-      "width": "183px",
       "rotate": 0,
       "z": 1
     },
-    "/img/apex-fsd-inference.mp4": {
-      "left": "-8.67%",
-      "top": "11.65%",
-      "width": "200px",
+    "/img/cashflow-tiktok-stats.png": {
+      "bottom": "5%",
+      "right": "5%",
+      "width": "250px",
+      "rotate": 0,
+      "z": 2
+    },
+    "/img/cashflow-demo.mp4": {
+      "top": "10%",
+      "right": "0%",
+      "width": "360px",
+      "rotate": 0,
+      "z": 3
+    }
+  },
+  "about": {
+    "/img/fredrik-1.jpeg": {
+      "top": "5%",
+      "left": "0%",
+      "width": "250px",
+      "rotate": 0,
+      "z": 1
+    },
+    "/img/fredrik-3.png": {
+      "bottom": "5%",
+      "right": "5%",
+      "width": "250px",
+      "rotate": 0,
+      "z": 2
+    },
+    "/img/fredrik-4.png": {
+      "top": "10%",
+      "right": "0%",
+      "width": "360px",
+      "rotate": 0,
+      "z": 3
+    },
+    "/img/fredrik-5.jpg": {
+      "bottom": "10%",
+      "left": "5%",
+      "width": "250px",
       "rotate": 0,
       "z": 4
-    },
-    "/img/apex-fsd-dataset.jpg": {
-      "left": "14.33%",
-      "top": "66.67%",
-      "width": "300px",
-      "rotate": 0,
-      "z": 5
     }
   }
 }
