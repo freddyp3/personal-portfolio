@@ -11,3 +11,9 @@ TypeScript is required; favor server components unless interactivity demands `"u
 
 ## Content Automation & Configuration Tips
 `npm run extract` parses MDX/blog content and `npm run push` sends it to downstream services; both expect `.env.local` with API keys. Guard secrets by using `dotenv` and never committing `.env*`. When editing MDX, keep assets in `public/blog/<slug>/` and update `src/data` entries if metadata changes. Verify Resend email templates inside `src/components/email` before deploying.
+
+## Updating From a New Resume
+When Fredrik sends a new resume (PDF/`.tex` from `~/Documents/resume/resumes/`):
+- Copy the PDF he sends, as-is, to `public/resume.pdf` (the downloadable resume). Don't build a new or mixed resume unless he asks.
+- Update **experience only**: overwrite the matching entries' `description` bullets in `src/data/career.json` with the resume bullets. Leave entries not on the resume untouched.
+- **Do not change project descriptions** in `src/data/projects.json` and don't add project bullets. Projects keep their hand-written prose descriptions; only fix a specific fact there if he explicitly asks.
