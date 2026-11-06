@@ -91,7 +91,7 @@
     },
     {
       "name": "YouTube Shorts AI Optimizer",
-      "description": "An AI copilot that watches a draft YouTube Short and predicts the second viewers will swipe away, before it's ever posted. Built on a channel that reached 45M views, its predictions beat a veteran creator's instincts, and 100+ creators have used it.",
+      "description": "An AI copilot that watches a draft YouTube Short and simulates an audience, the comments they would leave, and their attention span. Built on my own channel, which grew to 45M views, and I marketed it myself to 100+ users.",
       "image": "",
       "tags": [
         "Python",
