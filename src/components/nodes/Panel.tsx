@@ -421,7 +421,7 @@ export default function Panel({
 
 function defaultPageTab(node: PortfolioNode, isMobile: boolean): string | null {
   if (isMobile && node.media?.length) return "media";
-  return node.detailsOpen && node.bullets?.length ? "details" : null;
+  return null;
 }
 
 function buildPageTabs(
@@ -446,7 +446,7 @@ function buildPageTabs(
     tabs.push({
       key: "details",
       icon: "details",
-      title: "Details",
+      title: node.type === "experience" ? "What I did" : "Details",
       content: (
         <ul className={`${styles.list} ${styles.tabMetadata}`}>
           {node.bullets.map((b, i) => (
