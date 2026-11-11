@@ -145,12 +145,29 @@ function addLeaf(
 // --- experience ---
 const careerIdMap: Record<string, string> = {
   AEM: "aem",
-  ELLUSTROS: "ellustros",
+  ELLUSTRÖS: "ellustros",
   "UBC Department of Computer Science": "ubc-computer-science",
   "Under the GUI Academy": "under-the-gui-academy",
 };
 const careerTitleMap: Record<string, string> = {
   "UBC Department of Computer Science": "UBC Computer Science",
+};
+// open-page extras: full company name, location and a one-line intro
+const careerPanel: Record<
+  string,
+  { title?: string; location: string; intro: string }
+> = {
+  aem: {
+    title: "Advanced Environmental Monitoring (AEM)",
+    location: "Hayward, CA",
+    intro:
+      "AEM builds weather, wildfire and water monitoring systems for customers and partners like NOAA and the Citizen Weather Observer Program.",
+  },
+  ellustros: {
+    location: "The Blue Mountains, ON",
+    intro:
+      "ELLUSTRÖS makes smart chairs that adjust to your body from a single photo.",
+  },
 };
 const EXPERIENCE_IDS: string[] = [];
 
@@ -175,6 +192,7 @@ for (const job of careerByTime) {
       ? `${startY}–${endY}`
       : (endY ?? "now");
   const shortTitle = pos.title.split(" | ")[0];
+  const panel = careerPanel[id];
   EXPERIENCE_IDS.push(id);
   addLeaf(
     {
@@ -183,6 +201,12 @@ for (const job of careerByTime) {
       title: careerTitleMap[job.name] ?? job.name,
       subtitle: pos.title,
       group: endYear(pos.end),
+      ...(panel && {
+        panelTitle: panel.title,
+        panelSubtitle: `${pos.title} · ${panel.location} · ${pos.start} – ${pos.end ?? "Present"}`,
+        body: [panel.intro],
+        detailsOpen: true,
+      }),
       bullets: pos.description,
       links:
         job.href && id !== "ubc-computer-science"

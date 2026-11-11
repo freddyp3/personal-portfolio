@@ -8,8 +8,8 @@
       "positions": [
         {
           "title": "AI Engineer Intern",
-          "start": "May 2026",
-          "end": "Sep 2026",
+          "start": "Apr 2026",
+          "end": "Aug 2026",
           "description": [
             "Saved $16K a year with an AI support agent that escalates unresolved tickets to IT via an idempotent webhook",
             "Deployed the support agent on Azure Kubernetes with rolling updates, health probes and graceful shutdown",
@@ -22,14 +22,14 @@
       ]
     },
     {
-      "name": "ELLUSTROS",
+      "name": "ELLUSTRÖS",
       "href": "",
       "logo": "/img/ellustros.png",
       "positions": [
         {
           "title": "Software Engineering Intern",
           "start": "Jan 2026",
-          "end": "Apr 2026",
+          "end": "Mar 2026",
           "description": [
             "Cut failed photo uploads on slow mobile networks by 70% with presigned URLs that send images straight to S3",
             "Built the chair recommendation system and backend features for a React Native app serving 300+ users",

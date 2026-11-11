@@ -421,7 +421,7 @@ export default function Panel({
 
 function defaultPageTab(node: PortfolioNode, isMobile: boolean): string | null {
   if (isMobile && node.media?.length) return "media";
-  return null;
+  return node.detailsOpen && node.bullets?.length ? "details" : null;
 }
 
 function buildPageTabs(

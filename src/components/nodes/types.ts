@@ -43,6 +43,8 @@ export interface PortfolioNode {
   // longer name for the panel (lists and the open page); the map keeps title
   panelTitle?: string;
   panelSubtitle?: string;
+  // open the Details tab when the page opens
+  detailsOpen?: boolean;
   tags?: string[];
   links?: NodeLink[];
   // full write-up URL, shown as "Read more" under the body
