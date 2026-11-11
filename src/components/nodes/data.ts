@@ -79,6 +79,7 @@ export const LAYOUT: Record<string, [number, number]> = {
   aem: [-410, -238],
   scheming: [-297, -385],
   gitintent: [-102, -321],
+  quad: [-215, 60],
   "youtube-shorts-ai-optimizer": [-397, -17],
   "machine-learning": [187, -93],
   "chelsea-fc-play-predictor": [143, -385],
@@ -198,8 +199,9 @@ for (const job of careerByTime) {
 }
 
 // --- hackathons + projects ---
-const HACKATHON_IDS = ["apex-fsd", "scheming", "gitintent"];
+const HACKATHON_IDS = ["quad", "apex-fsd", "scheming", "gitintent"];
 const hackathonSubtitles: Record<string, string> = {
+  quad: "HackCamp 2026 2x winner",
   "apex-fsd": "StormHacks 2026 winner",
   scheming: "HackMIT 2026",
   gitintent: "UC Berkeley 2026",
@@ -348,7 +350,7 @@ for (const p of projects.projects) {
     readMore,
   };
   const connected =
-    id === "gitintent" || id === "youtube-shorts-ai-optimizer"
+    id === "gitintent" || id === "youtube-shorts-ai-optimizer" || id === "quad"
       ? ["backend-systems"]
       : undefined;
   addLeaf(
@@ -470,7 +472,13 @@ function buildGraph(): Graph {
       id: "ai-agents",
       title: "AI Agents & LLMs",
       body: "Agents that read, reason and act, and the evals that keep them honest.",
-      childIds: ["aem", "scheming", "gitintent", "youtube-shorts-ai-optimizer"],
+      childIds: [
+        "aem",
+        "scheming",
+        "gitintent",
+        "quad",
+        "youtube-shorts-ai-optimizer",
+      ],
     },
     {
       id: "machine-learning",
@@ -610,6 +618,7 @@ export interface ProjectEntry {
 // /projects order: these first, then the rest in résumé order, then anything
 // else in projects.json order
 const PROJECT_PAGE_ORDER = [
+  "quad",
   "apex-fsd",
   "email-synced-cashflow-tracker",
   "scheming",

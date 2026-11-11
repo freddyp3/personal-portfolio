@@ -1,6 +1,34 @@
 {
   "projects": [
     {
+      "name": "Quad - HackCamp 2026 (Winner)",
+      "description": "Won 1st place for Best Use of Freebuff and 2nd for Best Agent on Maritime at HackCamp 2026 with Quad, an app whose scheduled agents collect UBC club events from club sites, calendars and social media into one live feed that stays correct when details change.",
+      "image": "",
+      "tags": [
+        "Python",
+        "FastAPI",
+        "SQLite",
+        "React",
+        "TypeScript",
+        "Gemini API",
+        "Databricks",
+        "Docker",
+        "Maritime"
+      ],
+      "links": [
+        {
+          "name": "Source",
+          "href": "https://github.com/freddyp3/hackcamp2026",
+          "icon": "github"
+        },
+        {
+          "name": "Devpost",
+          "href": "https://devpost.com/software/quad-tqhwdg",
+          "icon": "globe"
+        }
+      ]
+    },
+    {
       "name": "Apex FSD - StormHacks 2026 (Winner)",
       "description": "An AI that drives Forza Horizon by physically turning a real steering wheel, and lets go the instant a human grabs it. Won Best Python Hack at Western Canada's largest hackathon.",
       "image": "/img/apex-fsd.jpg",
