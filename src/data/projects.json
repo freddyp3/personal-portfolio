@@ -2,7 +2,7 @@
   "projects": [
     {
       "name": "Quad - HackCamp 2026 (Winner)",
-      "description": "Won 1st place for Best Use of Freebuff and 2nd for Best Agent on Maritime at HackCamp 2026 with Quad, an app whose scheduled agents collect UBC club events from club sites, calendars and social media into one live feed that stays correct when details change.",
+      "description": "Won Best Use of Freebuff and Best Agent on Maritime at HackCamp 2026 with Quad, an app whose scheduled agents collect UBC club events from club sites, calendars and social media into one live feed that stays correct when details change.",
       "image": "",
       "tags": [
         "Python",
