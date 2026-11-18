@@ -12,18 +12,6 @@ export const metadata: Metadata = {
     "Full-stack sales and inventory tracker for a cross-platform clothing reselling business.",
 };
 
-const ARCHITECTURE_DIAGRAM = `┌──────────────┐     /api      ┌───────────────────┐   JPA    ┌────────────┐
-│  React SPA   │ ────────────► │  Spring Boot API  │ ───────► │ PostgreSQL │
-│ (Vite + TS)  │               │     (Java 21)     │          └────────────┘
-└──────────────┘               │                   │ ───────► ┌────────────┐
-                               └───────────────────┘  cache   │   Redis    │
-                                         ▲                    └────────────┘
-                                         │ PUT /api/orders/external/{platform}/{ref}
-                               ┌─────────┴─────────┐   pull   ┌────────────┐   push  ┌───────────┐
-                               │  Go worker        │ ◄─────── │  Pub/Sub   │ ◄────── │ Gmail API │
-                               │ (goroutine pool)  │          └────────────┘ watch() └───────────┘
-                               └───────────────────┘`;
-
 const DOCKER_COMMANDS = `cp .env.example .env
 docker compose up --build`;
 
@@ -33,6 +21,8 @@ psql cashflow_tracker_db -f app/database/create_tables.sql
 psql cashflow_tracker_db -f app/database/create_views.sql
 psql cashflow_tracker_db -f app/database/migrations/002_external_ref.sql
 psql cashflow_tracker_db -f app/database/migrations/003_coordinates_platforms.sql
+psql cashflow_tracker_db -f app/database/migrations/004_drop_personal_hauls.sql
+psql cashflow_tracker_db -f app/database/migrations/005_product_kind.sql
 
 # backend — http://localhost:8080
 ./gradlew :app:bootRun
@@ -141,7 +131,13 @@ export default function CashflowTrackerWriteUp() {
 
           <div className={styles.section}>
             <span className={styles.sectionTitle}>how it&apos;s built</span>
-            <pre className={styles.pre}>{ARCHITECTURE_DIAGRAM}</pre>
+            <Image
+              src="/img/cashflow-architecture.png"
+              alt="Architecture: Gmail to Pub/Sub to the Go worker, into the Spring Boot API, PostgreSQL and Redis, out to the React app"
+              width={3150}
+              height={1144}
+              className={styles.media}
+            />
 
             <ul className={styles.list}>
               <li>
