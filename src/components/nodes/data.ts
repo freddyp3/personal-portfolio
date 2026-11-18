@@ -254,6 +254,7 @@ const cashflowMedia: NodeMedia[] = [
   { type: "video", src: "/img/cashflow-demo.mp4" },
   { type: "image", src: "/img/cashflow-home.png" },
   { type: "image", src: "/img/cashflow-tiktok-stats.png" },
+  { type: "image", src: "/img/cashflow-architecture.png" },
 ];
 
 // node-id -> full write-up shown as "Read more" under the panel body

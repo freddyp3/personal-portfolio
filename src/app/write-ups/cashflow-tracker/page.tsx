@@ -2,8 +2,8 @@ import DemoVideo from "@/components/DemoVideo";
 import SiteNav from "@/components/SiteNav";
 import { TabIcon } from "@/components/nodes/shapes";
 import styles from "@/components/writeup/writeup.module.css";
+import ZoomImage from "@/components/writeup/ZoomImage";
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -77,7 +77,7 @@ export default function CashflowTrackerWriteUp() {
               way to track profits than on paper.
             </p>
 
-            <Image
+            <ZoomImage
               src="/img/cashflow-tiktok-stats.png"
               alt="My TikTok stats"
               width={1140}
@@ -93,7 +93,7 @@ export default function CashflowTrackerWriteUp() {
 
           <div className={styles.section}>
             <span className={styles.sectionTitle}>what I use it for</span>
-            <Image
+            <ZoomImage
               src="/img/cashflow-home.png"
               alt="Home dashboard"
               width={1600}
@@ -131,7 +131,7 @@ export default function CashflowTrackerWriteUp() {
 
           <div className={styles.section}>
             <span className={styles.sectionTitle}>how it&apos;s built</span>
-            <Image
+            <ZoomImage
               src="/img/cashflow-architecture.png"
               alt="Architecture: Gmail to Pub/Sub to the Go worker, into the Spring Boot API, PostgreSQL and Redis, out to the React app"
               width={3150}
