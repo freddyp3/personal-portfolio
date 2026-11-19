@@ -938,6 +938,15 @@ li.yearGroup {
   display: block;
 }
 
+.mediaItem:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 2px;
+}
+
+.gallery:focus {
+  outline: none;
+}
+
 .mediaOpen img,
 .mediaOpen video {
   opacity: 0;
@@ -1060,25 +1069,48 @@ li.yearGroup {
   }
 }
 
-/* ---------- small stacked: labels hidden (769–1200 keeps them) ---------- */
+/* ---------- small stacked: compact labels (769–1200 keeps full size) ---------- */
 
 @media (max-width: 768px) {
+  /* names stay on, set smaller so they fit the phone-sized map; the
+     subtitle line only shows for the root and the open node */
+  /* a taller map gives the labels room between rows */
+  .mapContainer {
+    height: min(100vw, 75vh);
+  }
+
   .nodeLabel {
+    transform: translate(-50%, -6px);
+    line-height: 10px;
+  }
+
+  /* long names wrap onto two short lines instead of running into the
+     neighbouring node */
+  .nodeLabel span {
+    max-width: 78px;
+  }
+
+  .nodeLabel h2 {
+    font-size: 9px;
+    letter-spacing: 0;
+    padding: 0 2px;
+    white-space: normal;
+  }
+
+  .nodeLabel br,
+  .nodeLabel h3 {
     display: none;
   }
 
-  .rootNode .nodeLabel {
-    display: block;
-  }
-
-  .nodeLabel h3 {
-    opacity: 0;
+  .rootNode .nodeLabel br,
+  .currentNode .nodeLabel br {
+    display: inline;
   }
 
   .rootNode .nodeLabel h3,
-  .currentNode .nodeLabel h3,
-  .node:hover .nodeLabel h3 {
-    opacity: 1;
+  .currentNode .nodeLabel h3 {
+    display: inline;
+    font-size: 8px;
   }
 }
 

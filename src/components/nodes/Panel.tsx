@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import type { Graph } from "./data";
 import { openLightbox } from "./Lightbox";
+import { cardImageProps } from "./mediaImage";
 import { bringToFront, sendBack } from "./stack";
 import { TabIcon } from "./shapes";
 import styles from "./nodes.module.css";
@@ -188,10 +189,24 @@ function MobileMedia({ media }: { media: NodeMedia[] }) {
           <div
             className={`${styles.mediaItem} ${styles.showMediaItem}`}
             onClick={(e) => openLightbox(e.currentTarget)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                openLightbox(e.currentTarget);
+              }
+            }}
+            role="button"
+            aria-label={`Expand ${m.type}`}
+            tabIndex={0}
           >
             {m.type === "image" ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={m.src} alt="" />
+              <img
+                {...cardImageProps(m.src)}
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
             ) : (
               <video
                 src={m.src}

@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { toast } from "sonner";
+import { toast, Toaster } from "sonner";
 import { z } from "zod";
 import SiteNav from "../SiteNav";
 import { TabIcon } from "../nodes/shapes";
@@ -119,6 +119,7 @@ export default function ContactCard() {
                 name="website"
                 tabIndex={-1}
                 autoComplete="off"
+                aria-hidden="true"
                 className={styles.honeypot}
               />
 
@@ -208,6 +209,7 @@ export default function ContactCard() {
         </div>
       </div>
       <SiteNav active="contact" variant="nodes" />
+      <Toaster className="mt-12" position="top-right" theme="light" />
     </div>
   );
 }

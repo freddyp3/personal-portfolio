@@ -58,7 +58,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: "var(--font-sans)",
+        sans: "var(--font-geist-sans)",
         serif: "var(--font-serif)",
         geist: "var(--font-geist-sans)",
       },

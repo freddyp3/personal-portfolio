@@ -11,6 +11,7 @@ import {
 import { useSearchParams } from "next/navigation";
 import { GRAPH, LAYOUT, LAYOUT_NUDGE, visibleTree } from "./data";
 import MediaShowcase from "./MediaShowcase";
+import { preloadCardImages } from "./mediaImage";
 import styles from "./nodes.module.css";
 import Panel from "./Panel";
 import SiteNav from "../SiteNav";
@@ -142,6 +143,13 @@ export default function NodePortfolio() {
       }
     }
   }, [searchParams, graph]);
+
+  // hovering or focusing a node (on the map or in the panel lists) is a
+  // strong hint it's about to be opened: fetch its card images ahead of time
+  useEffect(() => {
+    if (hoveredId && !isMobile)
+      preloadCardImages(graph.nodes[hoveredId]?.media?.slice(0, 6));
+  }, [hoveredId, isMobile, graph]);
 
   // escape closes the open page
   useEffect(() => {

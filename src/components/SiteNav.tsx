@@ -3,7 +3,9 @@ import Link from "next/link";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["400"] });
 
-const textBase = `${montserrat.className} text-[12px] uppercase leading-[1.35] tracking-[0.03em] sm:text-[13px]`;
+// on touch screens each link gets 4px of padding above and below, so the
+// stacked links are 24px apart instead of 16px and easier to hit
+const textBase = `${montserrat.className} text-[12px] uppercase leading-[1.35] tracking-[0.03em] sm:text-[13px] [@media(pointer:coarse)]:py-[4px]`;
 const transition = {
   transition: "color 0.22s cubic-bezier(0.25, 0.7, 0.25, 1)",
 };

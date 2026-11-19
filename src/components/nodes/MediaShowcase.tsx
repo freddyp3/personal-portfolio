@@ -3,6 +3,7 @@
 import savedLayout from "@/data/media-layout.json";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { openLightbox } from "./Lightbox";
+import { cardImageProps } from "./mediaImage";
 import { bringToFront, sendBack } from "./stack";
 import styles from "./nodes.module.css";
 import type { NodeMedia } from "./types";
@@ -134,14 +135,23 @@ function MediaEl({
       onClick={(e) => {
         if (!editing) openLightbox(e.currentTarget);
       }}
+      onKeyDown={(e) => {
+        if (editing || e.target !== e.currentTarget) return;
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          openLightbox(e.currentTarget);
+        }
+      }}
       role="button"
-      tabIndex={-1}
+      aria-label={`Expand ${item.media.type}`}
+      tabIndex={ready && !item.closing && !editing ? 0 : -1}
     >
       {item.media.type === "image" ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
-          src={item.media.src}
+          {...cardImageProps(item.media.src)}
           alt=""
+          decoding="async"
           draggable={false}
           onLoad={(e) =>
             reveal(e.currentTarget.naturalWidth, e.currentTarget.naturalHeight)
@@ -200,7 +210,7 @@ export default function MediaShowcase({
   useEffect(() => {
     const hadItems = itemsRef.current.length > 0;
     setItems((prev) => prev.map((it) => ({ ...it, closing: true })));
-    const delay = firstLoad.current ? 1500 : hadItems ? 400 : 0;
+    const delay = firstLoad.current ? 600 : hadItems ? 400 : 0;
     firstLoad.current = false;
     const t = setTimeout(() => {
       setItems(

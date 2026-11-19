@@ -2,9 +2,14 @@ import SiteNav from "@/components/SiteNav";
 import { TabIcon } from "@/components/nodes/shapes";
 import styles from "@/components/writeup/writeup.module.css";
 import { promises as fs } from "fs";
+import type { Metadata } from "next";
 import Link from "next/link";
 import path from "path";
 import ReactMarkdown from "react-markdown";
+
+export const metadata: Metadata = {
+  title: "Privacy policy",
+};
 
 async function getPrivacyContent() {
   const filePath = path.join(process.cwd(), "src/data/privacy.md");

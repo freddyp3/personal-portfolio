@@ -32,7 +32,10 @@ export default function ProjectImage({
       priority={priority}
       onLoad={() => setLoaded(true)}
       style={{
-        opacity: loaded ? 1 : 0,
+        // the fade needs JS to reveal the image; the first (preloaded)
+        // images skip it so they paint as soon as they arrive instead of
+        // waiting for hydration
+        opacity: loaded || priority ? 1 : 0,
         transition: "opacity 250ms",
       }}
     />

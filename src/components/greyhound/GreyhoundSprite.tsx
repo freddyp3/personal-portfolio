@@ -102,7 +102,7 @@ export default function GreyhoundSprite({
   useEffect(() => {
     let cancelled = false;
     const img = new Image();
-    img.onload = () => {
+    img.onload = async () => {
       if (cancelled) return;
       const c = document.createElement("canvas");
       c.width = img.width;
@@ -114,7 +114,16 @@ export default function GreyhoundSprite({
       const size = frameW * frameH;
       const near: Float32Array[] = [];
       const any: Float32Array[] = [];
+      // the distance transforms take a few ms per frame (much more on a
+      // slow phone); hand the main thread back between slices so the page
+      // stays responsive instead of freezing in one long task
+      let sliceStart = performance.now();
       for (let f = 0; f < frames; f++) {
+        if (performance.now() - sliceStart > 12) {
+          await new Promise((r) => setTimeout(r, 0));
+          if (cancelled) return;
+          sliceStart = performance.now();
+        }
         const inNear = new Uint8Array(size);
         const inAny = new Uint8Array(size);
         for (let y = 0; y < frameH; y++) {

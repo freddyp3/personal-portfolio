@@ -4,7 +4,7 @@ import { GREYHOUND } from "@/components/greyhound/sprites";
 import SiteNav from "@/components/SiteNav";
 
 export const metadata: Metadata = {
-  title: "Fredrik Pettit",
+  title: { absolute: "Fredrik Pettit" },
 };
 
 export default function GreyhoundPage() {

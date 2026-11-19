@@ -8,6 +8,8 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Projects",
+  description:
+    "Everything Fredrik Pettit has built, from hackathon winners to side projects.",
 };
 
 export default function ProjectsPage() {

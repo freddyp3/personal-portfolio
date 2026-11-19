@@ -19,8 +19,21 @@ export function openLightbox(source: HTMLElement) {
     clone.currentTime = (media as HTMLVideoElement).currentTime;
     clone.play().catch(() => {});
   }
+  // card images are served at card size; opened large, let the browser pick
+  // a sharper candidate from the same srcset (the small one stays on screen
+  // until the bigger one has loaded)
+  if (clone instanceof HTMLImageElement && clone.srcset) {
+    clone.loading = "eager";
+    clone.sizes = "100vw";
+  }
   const overlay = document.createElement("div");
   overlay.className = styles.gallery;
+  overlay.setAttribute("role", "dialog");
+  overlay.setAttribute("aria-modal", "true");
+  overlay.setAttribute("aria-label", "Expanded media. Press Escape to close.");
+  overlay.tabIndex = -1;
+  // opened from the keyboard: move focus in, and hand it back on close
+  const restoreFocus = document.activeElement === source;
   overlay.appendChild(clone);
   document.body.appendChild(overlay);
   source.classList.add(styles.mediaOpen);
@@ -41,20 +54,31 @@ export function openLightbox(source: HTMLElement) {
       left: `${rect.left}px`,
     });
     overlay.classList.remove(styles.galleryIn);
+    document.removeEventListener("keydown", onKey);
+    if (restoreFocus) source.focus({ preventScroll: true });
     setTimeout(() => {
       source.classList.remove(styles.mediaOpen);
       overlay.remove();
-      document.removeEventListener("keydown", onKey);
     }, 500);
   };
   const onKey = (e: KeyboardEvent) => {
     if (e.key === "Escape") close();
+    else if (
+      (e.key === "Enter" || e.key === " ") &&
+      document.activeElement === overlay
+    ) {
+      e.preventDefault();
+      close();
+    }
   };
 
   setTimeout(() => overlay.classList.add(styles.galleryIn), 10);
   setTimeout(() => {
-    const maxW = window.innerWidth - 100;
-    const maxH = window.innerHeight - 100;
+    // 50px of backdrop around the media; on phones that would leave it
+    // smaller than it already is in the card, so go nearly edge to edge
+    const pad = window.innerWidth < 768 ? 24 : 100;
+    const maxW = window.innerWidth - pad;
+    const maxH = window.innerHeight - pad;
     const fit = maxW / maxH;
     const aspect = rect.width / rect.height;
     let w: number;
@@ -76,4 +100,5 @@ export function openLightbox(source: HTMLElement) {
 
   overlay.addEventListener("click", close);
   document.addEventListener("keydown", onKey);
+  if (restoreFocus) overlay.focus({ preventScroll: true });
 }

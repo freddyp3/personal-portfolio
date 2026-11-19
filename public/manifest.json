@@ -3,8 +3,8 @@
   "short_name": "fpettit",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#ffffff",
+  "background_color": "#f5f6f2",
+  "theme_color": "#f5f6f2",
   "description": "Fredrik Pettit's personal portfolio.",
   "icons": [
     {
