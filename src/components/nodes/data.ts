@@ -323,7 +323,7 @@ for (const p of projects.projects) {
       },
       {
         type: "image",
-        src: "/img/gitintent-diagram.png",
+        src: "/img/gitintent-architecture.png",
         place: { bottom: "2%", left: "-12%", width: "300px", rotate: 0, z: 5 },
       },
     ];
