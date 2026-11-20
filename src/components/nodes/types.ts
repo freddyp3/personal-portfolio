@@ -47,6 +47,7 @@ export interface PortfolioNode {
   links?: NodeLink[];
   // full write-up URL, shown as "Read more" under the body
   readMore?: string;
+  readMoreLabel?: string;
   media?: NodeMedia[];
   highlighted?: boolean;
   number?: number;

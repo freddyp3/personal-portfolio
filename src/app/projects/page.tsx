@@ -77,10 +77,12 @@ export default function ProjectsPage() {
                     !p.links.some((l) => l.href === p.readMore) ? (
                       p.readMore.startsWith("http") ? (
                         <a href={p.readMore} target="_blank" rel="noreferrer">
-                          Read more ↗
+                          {p.readMoreLabel ?? "Read more"} ↗
                         </a>
                       ) : (
-                        <Link href={p.readMore}>Read more</Link>
+                        <Link href={p.readMore}>
+                          {p.readMoreLabel ?? "Read more"}
+                        </Link>
                       )
                     ) : null}
                     {p.mapHref ? <Link href={p.mapHref}>Open on map</Link> : null}

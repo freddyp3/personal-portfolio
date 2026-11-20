@@ -11,15 +11,15 @@
     Helvetica,
     Arial,
     sans-serif;
-  font-size: 15px;
-  line-height: 1.5em;
+  font-size: 13px;
+  line-height: 1.45em;
   letter-spacing: -0.01em;
 }
 
 .column {
-  max-width: 960px;
+  max-width: 880px;
   margin: 0 auto;
-  padding: 72px 28px 140px;
+  padding: 60px 24px 120px;
 }
 
 .headerRow {
@@ -32,8 +32,8 @@
 }
 
 .tabIcon {
-  width: 15px;
-  height: 15px;
+  width: 13px;
+  height: 13px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,14 +41,14 @@
 }
 
 .tabTitle {
-  font-size: 13px;
+  font-size: 11px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
 .closePage {
   margin-left: auto;
-  font-size: 13px;
+  font-size: 11px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #111;
@@ -63,20 +63,20 @@
 }
 
 .mainTitle {
-  margin-left: 30px;
-  margin-top: 6px;
+  margin-left: 25px;
+  margin-top: 5px;
 }
 
 .mainTitle h2 {
-  font-size: 17px;
+  font-size: 14px;
   letter-spacing: -0.01em;
   font-weight: normal;
   margin: 0;
 }
 
 .mainTitle h4 {
-  margin: 3px 0 0;
-  font-size: 13px;
+  margin: 2px 0 0;
+  font-size: 12px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   font-weight: normal;
@@ -85,8 +85,8 @@
 
 /* matches li.yearGroup in nodes.module.css */
 .groupLabel {
-  margin: 36px 0 14px 30px;
-  font-size: 13px;
+  margin: 30px 0 12px 25px;
+  font-size: 12px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #111;
@@ -95,7 +95,7 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 12px;
 }
 
 @media (max-width: 640px) {
@@ -106,17 +106,17 @@
 
 .card {
   background: rgb(255, 255, 255);
-  border-radius: 8px;
-  padding: 26px 30px 25px;
+  border-radius: 7px;
+  padding: 22px 25px 21px;
 }
 
 .image {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 10;
-  border-radius: 6px;
+  border-radius: 5px;
   overflow: hidden;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   background: rgb(236, 237, 232);
 }
 
@@ -125,15 +125,15 @@
 }
 
 .cardTitle {
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: -0.01em;
   font-weight: normal;
   margin: 0;
 }
 
 .cardSubtitle {
-  margin: 3px 0 0;
-  font-size: 13px;
+  margin: 2px 0 0;
+  font-size: 12px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   font-weight: normal;
@@ -141,8 +141,8 @@
 }
 
 .description {
-  margin: 12px 0 0;
-  font-size: 15px;
+  margin: 10px 0 0;
+  font-size: 13px;
   letter-spacing: -0.01em;
 }
 
@@ -171,8 +171,8 @@
 }
 
 .tags {
-  margin: 12px 0 0;
-  font-size: 12px;
+  margin: 10px 0 0;
+  font-size: 11px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #888;
@@ -181,12 +181,12 @@
 .links {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px 16px;
-  margin-top: 14px;
+  gap: 4px 14px;
+  margin-top: 12px;
 }
 
 .links a {
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #111;

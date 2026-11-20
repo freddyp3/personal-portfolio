@@ -414,10 +414,12 @@ export default function Panel({
                           target="_blank"
                           rel="noreferrer"
                         >
-                          Read more
+                          {node.readMoreLabel ?? "Read more"}
                         </a>
                       ) : (
-                        <Link href={node.readMore}>Read more</Link>
+                        <Link href={node.readMore}>
+                          {node.readMoreLabel ?? "Read more"}
+                        </Link>
                       )}
                     </p>
                   ) : null}

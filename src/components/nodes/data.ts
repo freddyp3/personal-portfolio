@@ -275,9 +275,13 @@ for (const p of projects.projects) {
   const title = isHackathon ? p.name.split(" - ")[0].trim() : p.name;
   const id = slugify(title);
   const links = p.links.map((l) => ({ name: l.name, href: l.href }));
-  const readMore =
-    WRITE_UPS[id] ??
-    p.links.find((l) => l.name === "Devpost" || l.name === "Plume")?.href;
+  const readMoreLink = p.links.find(
+    (l) => l.name === "Devpost" || l.name === "Plume",
+  );
+  const readMore = WRITE_UPS[id] ?? readMoreLink?.href;
+  const readMoreLabel = WRITE_UPS[id]
+    ? "Full write-up"
+    : readMoreLink?.name;
   let media: NodeMedia[] | undefined;
   if (id === "email-synced-cashflow-tracker") {
     media = cashflowMedia;
@@ -380,6 +384,7 @@ for (const p of projects.projects) {
     tags: p.tags,
     links,
     readMore,
+    readMoreLabel,
   };
   const connected =
     id === "gitintent" || id === "youtube-shorts-ai-copilot" || id === "quad"
@@ -396,6 +401,7 @@ for (const p of projects.projects) {
       tags: p.tags,
       links,
       readMore,
+      readMoreLabel,
       media,
       highlighted: id === "apex-fsd",
     },
@@ -645,6 +651,7 @@ export interface ProjectEntry {
   links: { name: string; href: string }[];
   mapHref?: string;
   readMore?: string;
+  readMoreLabel?: string;
 }
 
 // /projects order: these first, then the rest in résumé order, then anything
