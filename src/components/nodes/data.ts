@@ -80,7 +80,7 @@ export const LAYOUT: Record<string, [number, number]> = {
   scheming: [-310, -400],
   gitintent: [-140, -380],
   quad: [-410, 20],
-  "youtube-shorts-ai-optimizer": [-480, -160],
+  "youtube-shorts-ai-copilot": [-480, -160],
   "machine-learning": [187, -93],
   "chelsea-fc-play-predictor": [143, -385],
   "apex-fsd": [372, -274],
@@ -232,7 +232,7 @@ const hackathonSubtitles: Record<string, string> = {
 };
 const projectSubtitles: Record<string, string> = {
   "email-synced-cashflow-tracker": "Resale business backend",
-  "youtube-shorts-ai-optimizer": "46.7M views, 37.7K subs",
+  "youtube-shorts-ai-copilot": "46.7M views, 37.7K subs",
   "premier-predictor": "Match outcome model",
   "java-oop-quiz-application": "Desktop app",
   "vital-sense-radar": "Wi-Fi sensing hardware",
@@ -243,7 +243,7 @@ const projectSubtitles: Record<string, string> = {
 // résumé ordering for projects (strongest first)
 const RESUME_PROJECT_IDS = [
   "email-synced-cashflow-tracker",
-  "youtube-shorts-ai-optimizer",
+  "youtube-shorts-ai-copilot",
   "vital-sense-radar",
   "chelsea-fc-play-predictor",
   "premier-predictor",
@@ -265,7 +265,7 @@ const youtubeShortsMedia: NodeMedia[] = [
 // node-id -> full write-up shown as "Read more" under the panel body
 const WRITE_UPS: Record<string, string> = {
   "email-synced-cashflow-tracker": "/write-ups/cashflow-tracker",
-  "youtube-shorts-ai-optimizer": "/write-ups/youtube-shorts-optimizer",
+  "youtube-shorts-ai-copilot": "/write-ups/youtube-shorts-copilot",
 };
 
 const PROJECT_IDS: string[] = [];
@@ -281,7 +281,7 @@ for (const p of projects.projects) {
   let media: NodeMedia[] | undefined;
   if (id === "email-synced-cashflow-tracker") {
     media = cashflowMedia;
-  } else if (id === "youtube-shorts-ai-optimizer") {
+  } else if (id === "youtube-shorts-ai-copilot") {
     media = youtubeShortsMedia;
   } else if (id === "scheming") {
     // hand-placed scatter around the card: tilted, overlapping a little,
@@ -382,7 +382,7 @@ for (const p of projects.projects) {
     readMore,
   };
   const connected =
-    id === "gitintent" || id === "youtube-shorts-ai-optimizer" || id === "quad"
+    id === "gitintent" || id === "youtube-shorts-ai-copilot" || id === "quad"
       ? ["backend-systems"]
       : undefined;
   addLeaf(
@@ -509,7 +509,7 @@ function buildGraph(): Graph {
         "scheming",
         "gitintent",
         "quad",
-        "youtube-shorts-ai-optimizer",
+        "youtube-shorts-ai-copilot",
       ],
     },
     {
@@ -655,7 +655,7 @@ const PROJECT_PAGE_ORDER = [
   "email-synced-cashflow-tracker",
   "scheming",
   "gitintent",
-  "youtube-shorts-ai-optimizer",
+  "youtube-shorts-ai-copilot",
   ...RESUME_PROJECT_IDS,
   ...Object.keys(projectEntries),
 ].filter((id, i, all) => projectEntries[id] && all.indexOf(id) === i);

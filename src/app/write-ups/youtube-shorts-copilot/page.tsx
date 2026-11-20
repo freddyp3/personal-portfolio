@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "YouTube Short Copilot",
+  title: "YouTube Shorts AI Copilot",
   description:
     "Ask a chatbot whether people will watch your Short to the end, before you post it (for Brawl Stars specific content).",
 };
@@ -28,7 +28,7 @@ export default function YoutubeShortsWriteUp() {
             </span>
             <span className={styles.tabTitle}>Project</span>
             <Link
-              href="/about?node=youtube-shorts-ai-optimizer"
+              href="/about?node=youtube-shorts-ai-copilot"
               className={styles.closePage}
             >
               Go back
@@ -36,7 +36,7 @@ export default function YoutubeShortsWriteUp() {
           </div>
 
           <div className={styles.mainTitle}>
-            <h2>YouTube Short Copilot</h2>
+            <h2>YouTube Shorts AI Copilot</h2>
           </div>
 
           <div className={styles.source}>
