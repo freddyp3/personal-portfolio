@@ -82,7 +82,7 @@ export default function YoutubeShortsWriteUp() {
             <ul className={styles.list}>
               <li>46.7M views</li>
               <li>393.6K watch time hours</li>
-              <li>38.7K subscribers</li>
+              <li>37.7K subscribers</li>
               <li>1.8M likes</li>
             </ul>
           </div>

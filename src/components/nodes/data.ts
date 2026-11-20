@@ -232,7 +232,7 @@ const hackathonSubtitles: Record<string, string> = {
 };
 const projectSubtitles: Record<string, string> = {
   "email-synced-cashflow-tracker": "Resale business backend",
-  "youtube-shorts-ai-optimizer": "46.7M views, 38.7K subs",
+  "youtube-shorts-ai-optimizer": "46.7M views, 37.7K subs",
   "premier-predictor": "Match outcome model",
   "java-oop-quiz-application": "Desktop app",
   "vital-sense-radar": "Wi-Fi sensing hardware",

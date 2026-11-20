@@ -119,7 +119,7 @@
     },
     {
       "name": "YouTube Shorts AI Optimizer",
-      "description": "Ask a chatbot whether people will watch your Short to the end, before you post it (for Brawl Stars specific content). I built and use this for my own Brawl Stars channel (46.7M views, 38.7K subscribers) with a Gemini agent, MCP server, and eval harness. Inspired by academic work on video popularity prediction and retention modeling.",
+      "description": "Ask a chatbot whether people will watch your Short to the end, before you post it (for Brawl Stars specific content). I built and use this for my own Brawl Stars channel (46.7M views, 37.7K subscribers) with a Gemini agent, MCP server, and eval harness. Inspired by academic work on video popularity prediction and retention modeling.",
       "href": "/write-ups/youtube-shorts-optimizer",
       "image": "/img/youtube-shorts-architecture.png",
       "tags": [
