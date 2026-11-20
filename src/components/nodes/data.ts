@@ -120,6 +120,7 @@ const existingImages = new Set([
   "/img/scheming.jpg",
   "/img/ubc.png",
   "/img/utg.png",
+  "/img/youtube-shorts-architecture.png",
 ]);
 
 /* ------------------------------------------------------------------ */
@@ -231,7 +232,7 @@ const hackathonSubtitles: Record<string, string> = {
 };
 const projectSubtitles: Record<string, string> = {
   "email-synced-cashflow-tracker": "Resale business backend",
-  "youtube-shorts-ai-optimizer": "AI video tooling",
+  "youtube-shorts-ai-optimizer": "46.7M views, 38.7K subs",
   "premier-predictor": "Match outcome model",
   "java-oop-quiz-application": "Desktop app",
   "vital-sense-radar": "Wi-Fi sensing hardware",
@@ -257,9 +258,14 @@ const cashflowMedia: NodeMedia[] = [
   { type: "image", src: "/img/cashflow-architecture.png" },
 ];
 
+const youtubeShortsMedia: NodeMedia[] = [
+  { type: "image", src: "/img/youtube-shorts-architecture.png" },
+];
+
 // node-id -> full write-up shown as "Read more" under the panel body
 const WRITE_UPS: Record<string, string> = {
   "email-synced-cashflow-tracker": "/write-ups/cashflow-tracker",
+  "youtube-shorts-ai-optimizer": "/write-ups/youtube-shorts-optimizer",
 };
 
 const PROJECT_IDS: string[] = [];
@@ -275,6 +281,8 @@ for (const p of projects.projects) {
   let media: NodeMedia[] | undefined;
   if (id === "email-synced-cashflow-tracker") {
     media = cashflowMedia;
+  } else if (id === "youtube-shorts-ai-optimizer") {
+    media = youtubeShortsMedia;
   } else if (id === "scheming") {
     // hand-placed scatter around the card: tilted, overlapping a little,
     // deliberately untidy

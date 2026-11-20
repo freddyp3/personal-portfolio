@@ -12,8 +12,8 @@
     Helvetica,
     Arial,
     sans-serif;
-  font-size: 13px;
-  line-height: 1.45em;
+  font-size: 15px;
+  line-height: 1.5em;
   letter-spacing: -0.01em;
   overflow: hidden;
 }
@@ -436,25 +436,25 @@
 
 .group {
   background-color: rgb(255, 255, 255);
-  border-radius: 7px;
-  padding: 22px 25px 21px;
+  border-radius: 8px;
+  padding: 26px 30px 25px;
 }
 
 .pageMainTitle {
-  margin-left: 25px;
-  margin-top: 5px;
+  margin-left: 30px;
+  margin-top: 6px;
 }
 
 .pageMainTitle h2 {
-  font-size: 14px;
+  font-size: 17px;
   letter-spacing: -0.01em;
   font-weight: normal;
   margin: 0;
 }
 
 .pageMainTitle h4 {
-  margin: 2px 0 0;
-  font-size: 12px;
+  margin: 3px 0 0;
+  font-size: 13px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   font-weight: normal;
@@ -488,6 +488,32 @@
 
 .pageContentInner {
   padding: 20px 0 0;
+}
+
+.pageContentInner p {
+  margin: 0 0 10px;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+}
+
+.pageContentInner p:last-child {
+  margin-bottom: 0;
+}
+
+.pageContentInner a {
+  color: #111;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.pageContentInner a:hover {
+  text-decoration-style: dashed;
+}
+
+.pageContentInner em {
+  font-style: italic;
 }
 
 .pageContentInner + .tabs {
@@ -538,8 +564,8 @@
 }
 
 .tabIcon {
-  width: 14px;
-  height: 14px;
+  width: 15px;
+  height: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -547,7 +573,7 @@
 }
 
 .tabTitle {
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }

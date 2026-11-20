@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import ReactMarkdown from "react-markdown";
 import type { Graph } from "./data";
 import { openLightbox } from "./Lightbox";
 import { cardImageProps } from "./mediaImage";
@@ -400,7 +401,11 @@ export default function Panel({
                   ) : null}
                 </div>
                 <div className={styles.pageContentInner}>
-                  {node.body?.map((p, i) => <p key={i}>{p}</p>)}
+                  {node.body?.map((p, i) => (
+                    <div key={i}>
+                      <ReactMarkdown>{p}</ReactMarkdown>
+                    </div>
+                  ))}
                   {node.readMore ? (
                     <p>
                       {node.readMore.startsWith("http") ? (

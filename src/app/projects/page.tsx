@@ -5,6 +5,7 @@ import ProjectImage from "@/components/projects/ProjectImage";
 import styles from "@/components/projects/projects.module.css";
 import type { Metadata } from "next";
 import Link from "next/link";
+import ReactMarkdown from "react-markdown";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -55,7 +56,9 @@ export default function ProjectsPage() {
                   {p.subtitle ? (
                     <h4 className={styles.cardSubtitle}>{p.subtitle}</h4>
                   ) : null}
-                  <p className={styles.description}>{p.description}</p>
+                  <div className={styles.description}>
+                    <ReactMarkdown>{p.description}</ReactMarkdown>
+                  </div>
                   {p.tags.length ? (
                     <p className={styles.tags}>{p.tags.join(" · ")}</p>
                   ) : null}
